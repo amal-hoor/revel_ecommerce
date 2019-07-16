@@ -54,7 +54,7 @@
 
                 <hr>
 
-                <form id="option-choice-form">
+                <form id="option-choice-form" method="POST">
                     @csrf
                     <input type="hidden" name="id" value="{{ $product->id }}">
 
@@ -66,12 +66,12 @@
                         </div>
                         <div class="col-10">
                             <ul class="list-inline checkbox-alphanumeric checkbox-alphanumeric--style-1 mb-2">
-                                @foreach ($choice->options as $key => $option)
-                                    <li>
-                                        <input type="radio" id="{{ $choice->name }}-{{ $option }}" name="{{ $choice->name }}" value="{{ $option }}">
-                                        <label for="{{ $choice->name }}-{{ $option }}">{{ $option }}</label>
-                                    </li>
-                                @endforeach
+                                    @foreach ($choice->options as $key => $option)
+                                        <li>
+                                            <input type="radio" id="{{ $choice->name }}-{{ $option }}" name="{{ $choice->name }}" value="{{ $option }}">
+                                            <label for="{{ $choice->name }}-{{ $option }}">{{ $option }}</label>
+                                        </li>
+                                    @endforeach
                             </ul>
                         </div>
                     </div>

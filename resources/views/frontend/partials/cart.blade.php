@@ -1,3 +1,5 @@
+
+
 <a href="" class="nav-box-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <i class="la la-shopping-cart d-inline-block nav-box-icon"></i>
     <span class="nav-box-text d-none d-xl-inline-block">{{__('Cart')}}</span>

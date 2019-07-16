@@ -1,4 +1,4 @@
-<div class="sidebar sidebar--style-3 no-border stickyfill p-0">
+<div class="sidebar no-border stickyfill p-0">
     <div class="widget mb-0">
         <div class="widget-profile-box text-center p-3">
             <div class="image" style="background-image:url('{{ asset(Auth::user()->avatar_original) }}')"></div>
@@ -8,7 +8,7 @@
             <span>{{__('Menu')}}</span>
         </div>
         <div class="widget-profile-menu py-3">
-            <ul class="categories categories--style-3">
+            <ul class="list">
                 <li>
                     <a href="{{ route('dashboard') }}" class="{{ areActiveRoutesHome(['dashboard'])}}">
                         <i class="la la-dashboard"></i>
@@ -33,6 +33,7 @@
                         </span>
                     </a>
                 </li>
+
                 <li>
                     <a href="{{ route('profile') }}" class="{{ areActiveRoutesHome(['profile'])}}">
                         <i class="la la-user"></i>
@@ -41,6 +42,7 @@
                         </span>
                     </a>
                 </li>
+
                 @if (\App\BusinessSetting::where('type', 'wallet_system')->first()->value == 1)
                     <li>
                         <a href="{{ route('wallet.index') }}" class="{{ areActiveRoutesHome(['wallet.index'])}}">
@@ -50,7 +52,9 @@
                             </span>
                         </a>
                     </li>
+
                 @endif
+
                 <li>
                     <a href="{{ route('support_ticket.index') }}" class="{{ areActiveRoutesHome(['support_ticket.index'])}}">
                         <i class="la la-support"></i>

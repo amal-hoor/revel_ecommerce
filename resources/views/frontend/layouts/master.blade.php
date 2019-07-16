@@ -22,8 +22,10 @@
     <!-- Main CSS File -->
     <link rel="stylesheet" href="{{ asset('frontend/css/style.min.css') }}">
 <!-- Icons -->
-<link rel="stylesheet" href="{{ asset('frontend/css/font-awesome.min.css') }}" type="text/css">
-<link rel="stylesheet" href="{{ asset('frontend/css/line-awesome.min.css') }}" type="text/css">
+{{-- <link rel="stylesheet" href="{{ asset('frontend/css/font-awesome.min.css') }}" type="text/css"> --}}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+{{-- <link rel="stylesheet" href="{{ asset('frontend/css/line-awesome.min.css') }}" type="text/css"> --}}
 
 <link type="text/css" href="{{ asset('frontend/css/bootstrap-tagsinput.css') }}" rel="stylesheet">
 <link type="text/css" href="{{ asset('frontend/css/jodit.min.css') }}" rel="stylesheet">
@@ -33,13 +35,8 @@
 <link type="text/css" href="{{ asset('frontend/css/jquery.share.css') }}" rel="stylesheet">
 
 <!-- Global style (main) -->
-<link type="text/css" href="{{ asset('frontend/css/active-shop.css') }}" rel="stylesheet" media="screen">
 
-<!--Spectrum Stylesheet [ REQUIRED ]-->
-<link href="{{ asset('css/spectrum.css')}}" rel="stylesheet">
 
-<!-- Custom style -->
-<link type="text/css" href="{{ asset('frontend/css/custom-style.css') }}" rel="stylesheet">
 </head>
 <body>
 <div class="page-wrapper">
@@ -194,36 +191,96 @@
 <a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
 
 <!-- Plugins JS File -->
-<script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
-<script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('frontend/js/plugins.min.js') }}"></script>
 
-<!-- Main JS File -->
-<script src="{{ asset('frontend/js/main.min.js') }}"></script>
+        <!-- Plugins JS File -->
+        <script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
+        @if(\App\Language::where('code', Session::get('locale', Config::get('app.locale')))->first()->rtl == 1)
 
-<script src="{{ asset('frontend/js/vendor/popper.min.js') }}"></script>
-<script src="{{ asset('frontend/js/vendor/bootstrap.min.js') }}"></script>
-
-<!-- Plugins: Sorted A-Z -->
-<script src="{{ asset('frontend/js/jquery.countdown.min.js') }}"></script>
-<script src="{{ asset('frontend/js/select2.min.js') }}"></script>
-<script src="{{ asset('frontend/js/nouislider.min.js') }}"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script
+  src="https://cdn.rtlcss.com/bootstrap/v4.1.3/js/bootstrap.min.js"
+  integrity="sha384-C/pvytx0t5v9BEbkMlBAGSPnI1TQU1IrTJ6DJbC8GBHqdMnChcb6U4xg4uRkIQCV"
+  crossorigin="anonymous"></script>
 
 
-<script src="{{ asset('frontend/js/sweetalert2.min.js') }}"></script>
-<script src="{{ asset('frontend/js/slick.min.js') }}"></script>
+            @endif
+        <script src="{{ asset('frontend/js/fontawesome.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/plugins.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/jssocials.min.js') }}"></script>
 
-<script src="{{ asset('frontend/js/jquery.share.js') }}"></script>
+        <!-- Plugins: Sorted A-Z -->
+        <script src="{{ asset('frontend/js/jquery.countdown.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/select2.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/nouislider.min.js') }}"></script>
 
+
+        <script src="{{ asset('frontend/js/sweetalert2.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
+
+        <script src="{{ asset('frontend/js/jquery.share.js') }}"></script>
+        <!-- Main JS File -->
+        <script src="{{ asset('frontend/js/main.min.js') }}"></script>
+
+        <script src="{{ asset('frontend/js/bootstrap-tagsinput.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/jodit.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/xzoom.min.js') }}"></script>
+
+        <!-- App JS -->
+        <script src="{{ asset('frontend/js/fb-script.js') }}"></script>
+
+
+        <script type="text/javascript">
+            function showFrontendAlert(type, message) {
+                swal({
+                    position: 'center',
+                    type: type,
+                    title: message,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        </script>
 
 <script>
-$('#search').on('keyup', function(){
-    search();
-});
 
-$('#search').on('focus', function(){
-    search();
-});
+    $(document).ready(function() {
+        if ($('#lang-change').length > 0) {
+            $('#lang-change .dropdown-item a').each(function() {
+                $(this).on('click', function(e){
+                    e.preventDefault();
+                    var $this = $(this);
+                    var locale = $this.data('flag');
+                    $.post('{{ route('language.change') }}',{_token:'{{ csrf_token() }}', locale:locale}, function(data){
+                        location.reload();
+                    });
+
+                });
+            });
+        }
+
+        if ($('#currency-change').length > 0) {
+            $('#currency-change .dropdown-item a').each(function() {
+                $(this).on('click', function(e){
+                    e.preventDefault();
+                    var $this = $(this);
+                    var currency_code = $this.data('currency');
+                    $.post('{{ route('currency.change') }}',{_token:'{{ csrf_token() }}', currency_code:currency_code}, function(data){
+                        location.reload();
+                    });
+
+                });
+            });
+        }
+    });
+
+    $('#search').on('keyup', function(){
+        search();
+    });
+
+    $('#search').on('focus', function(){
+        search();
+    });
 
     function search(){
         var search = $('#search').val();
@@ -253,6 +310,11 @@ $('#search').on('focus', function(){
         }
     }
 
+    function updateNavCart(){
+        $.post('{{ route('cart.nav_cart') }}', {_token:'{{ csrf_token() }}'}, function(data){
+            $('#cart_items').html(data);
+        });
+    }
 
     function removeFromCart(key){
         $.post('{{ route('cart.removeFromCart') }}', {_token:'{{ csrf_token() }}', key:key}, function(data){
@@ -272,30 +334,28 @@ $('#search').on('focus', function(){
     }
 
 
-    function addToWishList(id){
-        @if (Auth::check())
-            $.post('{{ route('wishlists.store') }}', {_token:'{{ csrf_token() }}', id:id}, function(data){
-                if(data != 0){
-                    $('#wishlist').html(data);
-                    showFrontendAlert('success', 'Item has been added to wishlist');
-                }
-                else{
-                    showFrontendAlert('warning', 'Please login first');
-                }
-            });
-        @else
-            showFrontendAlert('warning', 'Please login first');
-        @endif
+    function addToWishList(id) {
+                @if (Auth::check())
+                $.post('{{ route('wishlists.store') }}', {_token: '{{ csrf_token() }}', id: id}, function (data) {
+                    if (data != 0) {
+                        $('#wishlist').html(data);
+                        showFrontendAlert('success', 'Item has been added to wishlist');
+                    } else {
+                        showFrontendAlert('warning', 'Please login first');
+                    }
+                });
+                @else
+                showFrontendAlert('warning', 'Please login first');
+                @endif
     }
-
 
     function showAddToCartModal(id){
         if(!$('#modal-size').hasClass('modal-lg')){
             $('#modal-size').addClass('modal-lg');
         }
         $('#addToCart-modal-body').html(null);
-         $('#addToCart').modal();
-         $('.c-preloader').show();
+        $('#addToCart').modal();
+        $('.c-preloader').show();
         $.post('{{ route('cart.showCartModal') }}', {_token:'{{ csrf_token() }}', id:id}, function(data){
             $('.c-preloader').hide();
             $('#addToCart-modal-body').html(data);
@@ -308,7 +368,6 @@ $('#search').on('focus', function(){
         });
     }
 
-
     $('#option-choice-form input').on('change', function(){
         getVariantPrice();
     });
@@ -316,26 +375,25 @@ $('#search').on('focus', function(){
     function getVariantPrice(){
         if($('#option-choice-form input[name=quantity]').val() > 0 && checkAddToCartValidity()){
             $.ajax({
-               type:"POST",
-               url: '{{ route('products.variant_price') }}',
-               data: $('#option-choice-form').serializeArray(),
-               success: function(data){
-                   $('#option-choice-form #chosen_price_div').removeClass('d-none');
-                   $('#option-choice-form #chosen_price_div #chosen_price').html(data);
-               }
-           });
+                type:"POST",
+                url: '{{ route('products.variant_price') }}',
+                data: $('#option-choice-form').serializeArray(),
+                success: function(data){
+                    $('#option-choice-form #chosen_price_div').removeClass('d-none');
+                    $('#option-choice-form #chosen_price_div #chosen_price').html(data);
+                }
+            });
         }
     }
-
 
     function checkAddToCartValidity(){
         var names = {};
         $('#option-choice-form input:radio').each(function() { // find unique names
-              names[$(this).attr('name')] = true;
+            names[$(this).attr('name')] = true;
         });
         var count = 0;
         $.each(names, function() { // then count them
-              count++;
+            count++;
         });
         if($('input:radio:checked').length == count){
             return true;
@@ -348,49 +406,78 @@ $('#search').on('focus', function(){
             $('#addToCart').modal();
             $('.c-preloader').show();
             $.ajax({
-               type:"POST",
-               url: '{{ route('cart.addToCart') }}',
-               data: $('#option-choice-form').serializeArray(),
-               success: function(data){
-                   $('#addToCart-modal-body').html(null);
-                   $('.c-preloader').hide();
-                   $('#modal-size').removeClass('modal-lg');
-                   $('#addToCart-modal-body').html(data);
-                   updateNavCart();
-                   $('#cart_items_sidenav').html(parseInt($('#cart_items_sidenav').html())+1);
-               }
-           });
+                type:"POST",
+                url: '{{ route('cart.addToCart') }}',
+                data: $('#option-choice-form').serializeArray(),
+                success: function(data){
+                    $('#addToCart-modal-body').html(null);
+                    $('.c-preloader').hide();
+                    $('#modal-size').removeClass('modal-lg');
+                    $('#addToCart-modal-body').html(data);
+                    updateNavCart();
+                    $('#cart_items_sidenav').html(parseInt($('#cart_items_sidenav').html())+1);
+                }
+            });
         }
         else{
             showFrontendAlert('warning', 'Please choose all the options');
         }
     }
-
-
 
     function buyNow(){
         if(checkAddToCartValidity()) {
             $('#addToCart').modal();
             $('.c-preloader').show();
             $.ajax({
-               type:"POST",
-               url: '{{ route('cart.addToCart') }}',
-               data: $('#option-choice-form').serializeArray(),
-               success: function(data){
-                   //$('#addToCart-modal-body').html(null);
-                   //$('.c-preloader').hide();
-                   //$('#modal-size').removeClass('modal-lg');
-                   //$('#addToCart-modal-body').html(data);
-                   updateNavCart();
-                   $('#cart_items_sidenav').html(parseInt($('#cart_items_sidenav').html())+1);
-                   window.location.replace("{{ route('checkout.shipping_info') }}");
-               }
-           });
+                type:"POST",
+                url: '{{ route('cart.addToCart') }}',
+                data: $('#option-choice-form').serializeArray(),
+                success: function(data){
+                    $('#addToCart-modal-body').html(null);
+                    $('.c-preloader').hide();
+                    $('#modal-size').removeClass('modal-lg');
+                    $('#addToCart-modal-body').html(data);
+                    updateNavCart();
+                    $('#cart_items_sidenav').html(parseInt($('#cart_items_sidenav').html())+1);
+                    window.location.replace("{{ route('checkout.shipping_info') }}");
+                }
+            });
         }
         else{
             showFrontendAlert('warning', 'Please choose all the options');
         }
     }
+
+    function show_purchase_history_details(order_id)
+    {
+        $('#order-details-modal-body').html(null);
+
+        if(!$('#modal-size').hasClass('modal-lg')){
+            $('#modal-size').addClass('modal-lg');
+        }
+
+        $.post('{{ route('purchase_history.details') }}', { _token : '{{ @csrf_token() }}', order_id : order_id}, function(data){
+            $('#order-details-modal-body').html(data);
+            $('#order_details').modal();
+            $('.c-preloader').hide();
+        });
+    }
+
+    function show_order_details(order_id)
+    {
+        $('#order-details-modal-body').html(null);
+
+        if(!$('#modal-size').hasClass('modal-lg')){
+            $('#modal-size').addClass('modal-lg');
+        }
+
+        $.post('{{ route('orders.details') }}', { _token : '{{ @csrf_token() }}', order_id : order_id}, function(data){
+            $('#order-details-modal-body').html(data);
+            $('#order_details').modal();
+            $('.c-preloader').hide();
+        });
+    }
+
     function cartQuantityInitialize(){
         $('.btn-number').click(function(e) {
             e.preventDefault();
@@ -424,7 +511,6 @@ $('#search').on('focus', function(){
                 input.val(0);
             }
         });
-
 
         $('.input-number').focusin(function() {
             $(this).data('oldValue', $(this).val());
@@ -469,19 +555,42 @@ $('#search').on('focus', function(){
         });
     }
 
+    function imageInputInitialize(){
+        $('.custom-input-file').each(function() {
+            var $input = $(this),
+                $label = $input.next('label'),
+                labelVal = $label.html();
 
+            $input.on('change', function(e) {
+                var fileName = '';
+
+                if (this.files && this.files.length > 1)
+                    fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+                else if (e.target.value)
+                    fileName = e.target.value.split('\\').pop();
+
+                if (fileName)
+                    $label.find('span').html(fileName);
+                else
+                    $label.html(labelVal);
+            });
+
+            // Firefox bug fix
+            $input
+                .on('focus', function() {
+                    $input.addClass('has-focus');
+                })
+                .on('blur', function() {
+                    $input.removeClass('has-focus');
+                });
+        });
+    }
 
 </script>
-<script src="{{ asset('frontend/js/bootstrap-tagsinput.min.js') }}"></script>
-<script src="{{ asset('frontend/js/jodit.min.js') }}"></script>
-<script src="{{ asset('frontend/js/xzoom.min.js') }}"></script>
 
-<!-- App JS -->
-<script src="{{ asset('frontend/js/active-shop.js') }}"></script>
-<script src="{{ asset('frontend/js/main.js') }}"></script>
-<script src="{{ asset('frontend/js/fb-script.js') }}"></script>
 
 @yield('script')
+
 </body>
 
 <!-- Mirrored from portotheme.com/html/porto_ecommerce/demo-8/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 30 Jun 2019 16:34:27 GMT -->

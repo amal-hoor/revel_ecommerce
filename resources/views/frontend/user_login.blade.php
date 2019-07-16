@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.master')
 
 @section('content')
     <section class="gry-bg py-5">
@@ -23,9 +23,7 @@
                                                         <!-- <label>{{ __('email') }}</label> -->
                                                         <div class="input-group input-group--style-1">
                                                             <input type="email" class="form-control form-control-sm {{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{__('Email')}}" name="email" id="email">
-                                                            <span class="input-group-addon">
-                                                                <i class="text-md la la-user"></i>
-                                                            </span>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -37,9 +35,7 @@
                                                         <!-- <label>{{ __('password') }}</label> -->
                                                         <div class="input-group input-group--style-1">
                                                             <input type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{__('Password')}}" name="password" id="password">
-                                                            <span class="input-group-addon">
-                                                                <i class="text-md la la-lock"></i>
-                                                            </span>
+
                                                         </div>
                                                     </div>
                                                 </div>

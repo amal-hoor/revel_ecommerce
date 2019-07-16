@@ -80,50 +80,104 @@
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non.</p>
                                     </div><!-- End .product-desc -->
 
-                                    <div class="product-filters-container">
-                                        <div class="product-single-filter">
-                                            <label>Colors:</label>
-                                            <ul class="config-swatch-list">
-                                                <li class="active">
-                                                    <a href="#" style="background-color: #6085a5;"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" style="background-color: #ab6e6e;"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" style="background-color: #b19970;"></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" style="background-color: #11426b;"></a>
-                                                </li>
-                                            </ul>
-                                        </div><!-- End .product-single-filter -->
-                                    </div><!-- End .product-filters-container -->
 
-                                    <div class="product-action product-all-icons">
-                                        <div class="product-single-qty">
-                                            <input class="horizontal-quantity form-control" type="text">
-                                        </div><!-- End .product-single-qty -->
+                                    <form id="option-choice-form" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{ $product->id }}">
+
+                                        @foreach (json_decode($product->choice_options) as $key => $choice)
+                                            <div class="product-filters-container">
+                                                <div class="product-single-filter">
+                                                    <label>{{ $choice->title }}:</label>
+                                                    <ul class="config-swatch-list">
+                                                        @foreach ($choice->options as $key => $option)
+                                                            <li>
+                                                                <input type="radio" id="{{ $choice->name }}-{{ $option }}"
+                                                                       name="{{ $choice->name }}" value="{{ $option }}"
+                                                                       @if($key == 0) checked @endif>
+                                                                <label for="{{ $choice->name }}-{{ $option }}">{{ $option }}</label>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div><!-- End .product-single-filter -->
+                                            </div><!-- End .product-filters-container -->
+                                        @endforeach
+                                        @if (count(json_decode($product->colors)) > 0)
+                                            <div class="product-filters-container">
+                                                <div class="product-single-filter">
+                                                    <label>{{__('Color')}}:</label>
+                                                    <ul class="config-swatch-list">
+                                                        @foreach (json_decode($product->colors) as $key => $color)
+                                                            <li class="color @if($key==0) active @endif">
+                                                                <a href="javascript:void(0)"
+                                                                   style="background-color: {{ $color }};"></a>
+                                                                <input type="radio" id="{{ $product->id }}-color-{{ $key }}"
+                                                                       name="color" style="display: none"
+                                                                       value="{{ $color }}" @if($key == 0) checked @endif>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div><!-- End .product-single-filter -->
+                                            </div><!-- End .product-filters-container -->
+                                        @endif
+
+                                        <div class="product-action">
+                                            <div class="number-input" style="padding-right: 10px">
+                                                <button type="button" class="minus  form-control"
+                                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                        style="display: inline; width: 20px;">-
+                                                </button>
+                                                <input class="quantity form-control" min="1" name="quantity" value="1"
+                                                       style="display: inline; width: 60px;" readonly
+                                                       type="number">
+                                                <button type="button"
+                                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                        style="display: inline; width: 20px;"
+                                                        class="plus form-control">+
+                                                </button>
+                                            </div>
+                                            <button type="button" class="paction add-cart" title="{{__('Add to cart')}}"
+                                                    onclick="addToCart()">
+                                                <span>{{__('Add to cart')}}</span>
+                                            </button>
+                                            <button type="button" class="paction add-wishlist" title="{{__('Add to wishlist')}}" onclick="addToWishList({{ $product->id }})">
+                                                <span>{{__('Add to wishlist')}}</span>
+                                            </button>
+                                            <button type="button" class="paction add-compare" title="{{__('Add to compare')}}"
+                                                    onclick="addToCompare({{ $product->id }})">
+                                                <span>{{__('Add to compare')}}</span>
+                                            </button>
+                                        </div><!-- End .product-action -->
+                                        <style>
+                                            .price{
+                                                color: #21293c;
+                                                font: 600 1.5rem/1.1 "Open Sans", sans-serif;
+                                                letter-spacing: .005em;
+                                                text-transform: uppercase;
+                                                margin-right: 1.3rem;
+                                                margin-bottom: 0;
+
+                                            }
+                                        </style>
+                                        <div class="row form-group no-gutters pb-3 d-none" id="chosen_price_div">
+                                            <div class="input-group number-input-wrapper ">
+                                                <span class="input-group-addon price" >{{__('Total Price')}}</span>
+                                                <div class="product-price" style="padding-left: 5px">
+                                                    <strong id="chosen_price">
+
+                                                    </strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="product-single-share mb-4">
+                                            <label>{{__('Share')}}:</label>
+                                            <!-- www.addthis.com share plugin-->
+                                            <div id="share"></div>
+                                        </div><!-- End .product single-share -->
 
 
-                                        <button type="button" class="btn btn-styled btn-alt-base-1 c-white btn-icon-left strong-700 hov-bounce hov-shaddow ml-2" onclick="addToCart()">
-                                            <i class="la la-shopping-cart"></i>
-                                            <span class="d-none d-md-inline-block"> {{__('Add to cart')}}</span>
-                                        </button>
-                                        
-                                        <button  class="paction add-wishlist" title="Add to Wishlist" onclick="addToWishList({{ $product->id }})">
-                                            <span>Add to Wishlist</span>
-                                        </button>
-                                        <a href="#" class="paction add-compare" title="Add to Compare">
-                                            <span>Add to Compare</span>
-                                        </a>
-                                    </div><!-- End .product-action -->
-
-                                    <div class="product-single-share">
-                                        <label>Share:</label>
-                                        <!-- www.addthis.com share plugin-->
-                                        <div class="addthis_inline_share_toolbox"></div>
-                                    </div><!-- End .product single-share -->
+                                    </form>
                                 </div><!-- End .product-single-details -->
                             </div><!-- End .col-lg-5 -->
                         </div><!-- End .row -->
@@ -387,7 +441,7 @@
                             </div><!-- End .price-box -->
 
                             <div class="product-action">
-                                <a href="#" class="paction add-wishlist" title="Add to Wishlist">
+                                <a href="#" class="paction add-wishlist" title="Add to Wishlist" onclick="addToWishList({{$product->id}})">
                                     <span>Add to Wishlist</span>
                                 </a>
 

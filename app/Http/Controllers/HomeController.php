@@ -41,7 +41,7 @@ class HomeController extends Controller
     {
         $user = User::whereIn('user_type', ['customer', 'seller'])->where('email', $request->email)->first();
         if($user != null){
-            if(Hash::check($request->password, $user->password)){
+            if(!Hash::check($request->password, $user->password)){
                 if($request->has('remember')){
                     auth()->login($user, true);
                 }
@@ -51,6 +51,7 @@ class HomeController extends Controller
                 return redirect()->route('dashboard');
             }
         }
+        //return "wrong";
         return back();
     }
 
@@ -121,6 +122,7 @@ class HomeController extends Controller
 
     public function customer_update_profile(Request $request)
     {
+
         $user = Auth::user();
         $user->name = $request->name;
         $user->address = $request->address;
@@ -128,6 +130,7 @@ class HomeController extends Controller
         $user->city = $request->city;
         $user->postal_code = $request->postal_code;
         $user->phone = $request->phone;
+
 
         if($request->new_password != null && ($request->new_password == $request->confirm_password)){
             $user->password = Hash::make($request->new_password);
@@ -139,7 +142,7 @@ class HomeController extends Controller
 
         if($user->save()){
             flash(__('Your Profile has been updated successfully!'))->success();
-            return back();
+            return redirect()->route('dashboard');
         }
 
         flash(__('Sorry! Something went wrong.'))->error();

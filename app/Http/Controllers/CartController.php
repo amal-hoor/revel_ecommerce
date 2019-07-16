@@ -35,26 +35,26 @@ class CartController extends Controller
 
         $data = array();
         $data['id'] = $product->id;
-        $str = '';
+        $str = 'hello';
         $tax = 0;
 
 
         //check the color enabled or disabled for the product
-        // if($request->has('color')){
-        //     $data['color'] = $request['color'];
-        //     $str = Color::where('code', $request['color'])->first()->name;
-        // }
+        if($request->has('color')){
+            $data['color'] = $request['color'];
+            $str = Color::where('code', $request['color'])->first()->name;
+        }
 
-        // //Gets all the choice values of customer choice option and generate a string like Black-S-Cotton
-        // foreach (json_decode(Product::find($request->id)->choice_options) as $key => $choice) {
-        //     $data[$choice->name] = $request[$choice->name];
-        //     if($str != null){
-        //         $str .= '-'.str_replace(' ', '', $request[$choice->name]);
-        //     }
-        //     else{
-        //         $str .= str_replace(' ', '', $request[$choice->name]);
-        //     }
-        //}
+        //Gets all the choice values of customer choice option and generate a string like Black-S-Cotton
+        foreach (json_decode(Product::find($request->id)->choice_options) as $key => $choice) {
+            $data[$choice->name] = $request[$choice->name];
+            if($str != null){
+                $str .= '-'.str_replace(' ', '', $request[$choice->name]);
+            }
+            else{
+                $str .= str_replace(' ', '', $request[$choice->name]);
+            }
+        }
 
         //Check the string and decreases quantity for the stock
         if($str != null){

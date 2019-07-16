@@ -1,11 +1,11 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.master')
 
 @section('content')
 
-    <section class="gry-bg py-4 profile">
+    <section class="gry-bg  profile">
         <div class="container">
-            <div class="row cols-xs-space cols-sm-space cols-md-space">
-                <div class="col-lg-3 d-none d-lg-block">
+            <div class="row">
+                <div class="col-lg-3">
                     @if(Auth::user()->user_type == 'seller')
                         @include('frontend.inc.seller_side_nav')
                     @elseif(Auth::user()->user_type == 'customer')
@@ -14,11 +14,11 @@
                 </div>
 
                 <div class="col-lg-9">
-                    <div class="main-content">
+                    <div class="">
                         <!-- Page title -->
                         <div class="page-title">
                             <div class="row align-items-center">
-                                <div class="col-md-6 col-12">
+                                <div class="col-md-6">
                                     <h2 class="heading heading-6 text-capitalize strong-600 mb-0">
                                         {{__('Manage Profile')}}
                                     </h2>

@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.master')
 
 @section('content')
 <section class="gry-bg py-4 profile">

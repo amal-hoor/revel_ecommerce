@@ -1,4 +1,21 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.master')
+<style>
+.dashboard-widget {
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-text-fill-color:white;
+}
+
+.col-md-5 {
+    border:solid 1px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 15px;
+    padding: 10px
+
+}
+
+</style>
 
 @section('content')
 
@@ -12,7 +29,7 @@
                     <!-- Page title -->
                     <div class="page-title">
                         <div class="row align-items-center">
-                            <div class="col-md-6 col-12">
+                            <div class="col-md-6 col-9">
                                 <h2 class="heading heading-6 text-capitalize strong-600 mb-0">
                                     {{__('Dashboard')}}
                                 </h2>
@@ -32,8 +49,8 @@
                     <div class="">
                         <div class="row">
                             <div class="col-md-4">
-                                <div class="dashboard-widget text-center green-widget mt-4 c-pointer">
-                                    <a href="javascript:;" class="d-block">
+                                <div class="dashboard-widget text-center bg-primary mt-4 c-pointer">
+                                    <a href="" class="d-block">
                                         <i class="fa fa-shopping-cart"></i>
                                         @if(Session::has('cart'))
                                             <span class="d-block title">{{ count(Session::get('cart'))}} Product(s)</span>
@@ -45,8 +62,8 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="dashboard-widget text-center red-widget mt-4 c-pointer">
-                                    <a href="javascript:;" class="d-block">
+                                <div class="dashboard-widget text-center bg-danger mt-4 c-pointer">
+                                    <a href="wishlists" class="d-block">
                                         <i class="fa fa-heart"></i>
                                         <span class="d-block title">{{ count(Auth::user()->wishlists)}} Product(s)</span>
                                         <span class="d-block sub-title">in your wishlist</span>
@@ -54,7 +71,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="dashboard-widget text-center yellow-widget mt-4 c-pointer">
+                                <div class="dashboard-widget bg-success text-center  mt-4 c-pointer">
                                     <a href="javascript:;" class="d-block">
                                         <i class="fa fa-building"></i>
                                         @php

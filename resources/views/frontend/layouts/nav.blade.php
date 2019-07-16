@@ -56,12 +56,21 @@
                     <a href="#">Links</a>
                     <div class="header-menu">
                         <ul>
-                            <li><a href="my-account.html">MY ACCOUNT </a></li>
-                            <li><a href="#">DAILY DEAL</a></li>
-                            <li><a href="#">MY WISHLIST </a></li>
-                            <li><a href="blog.html">BLOG</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="#" class="login-link">LOG IN</a></li>
+                            @auth
+                            <li>
+                                <a href="{{ route('dashboard') }}" class="top-bar-item">{{__('My Profile')}}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('logout') }}" class="top-bar-item">{{__('Logout')}}</a>
+                            </li>
+                            @else
+                            <li>
+                                <a href="{{ route('user.login') }}" class="top-bar-item">{{__('Login')}}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('user.registration') }}" class="top-bar-item">{{__('Registration')}}</a>
+                            </li>
+                            @endauth
                         </ul>
                     </div><!-- End .header-menu -->
                 </div><!-- End .header-dropown -->
@@ -136,7 +145,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right px-0">
                             <li>
-                                <div class="dropdown-cart px-0">
+                                <div class="dropdown-cart px-0 p-5">
                                     @if(Session::has('cart'))
                                         @if(count($cart = Session::get('cart')) > 0)
                                             <div class="dc-header">
