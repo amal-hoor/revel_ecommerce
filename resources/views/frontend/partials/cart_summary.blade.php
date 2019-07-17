@@ -258,7 +258,15 @@
 
 
                     <div class="checkout-methods">
-                        <a href="checkout-shipping.html" class="btn btn-block btn-sm btn-primary mt-3">Go to Checkout</a>
+                        {{-- <a href="checkout-shipping.html" class="btn btn-block btn-sm btn-primary mt-3">Go to Checkout</a> --}}
+
+                           <div class="col-6 text-right mt-3">
+                                @if(Auth::check())
+                                    <a href="{{ route('checkout.shipping_info') }}" class="btn btn-info">{{__('Continue to Shipping')}}</a>
+                                @else
+                                    <button class="btn btn-info" onclick="showCheckoutModal()">{{__('Continue to Shipping')}}</button>
+                                @endif
+                          </div>
 
          </div><!-- End .checkout-methods -->
      </div><!-- End .cart-summary -->

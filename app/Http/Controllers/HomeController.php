@@ -60,7 +60,7 @@ class HomeController extends Controller
         $user = User::whereIn('user_type', ['customer', 'seller'])->where('email', $request->email)->first();
         if($user != null){
             updateCartSetup();
-            if(Hash::check($request->password, $user->password)){
+            if(!Hash::check($request->password, $user->password)){
                 if($request->has('remember')){
                     auth()->login($user, true);
                 }

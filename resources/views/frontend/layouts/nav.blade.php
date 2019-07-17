@@ -89,7 +89,7 @@
             <div class="header-center">
                 <div class="header-search">
                     <a href="#" class="search-toggle" role="button"><i class="icon-magnifier"></i></a>
-                    <form action="#" method="get">
+                    <form action="{{ route('search') }}" method="get">
                         <div class="header-search-wrapper">
                             <input type="search" class="form-control" name="q" id="q" placeholder="Search..." required>
                             <div class="select-custom">
@@ -118,6 +118,46 @@
                             <button class="btn" type="submit"><i class="icon-magnifier"></i></button>
                         </div><!-- End .header-search-wrapper -->
                     </form>
+
+                           {{-- <form action="{{ route('search') }}" method="GET">
+                                    <div class="header-search-wrapper">
+                                        <div class="d-lg-none search-box-back">
+                                            <button class="" type="button"><i class="la la-long-arrow-left"></i></button>
+                                        </div>
+                                        <div class="w-100">
+                                            <input type="text" aria-label="Search" id="search" name="q" class="w-100" placeholder="I'm shopping for..." autocomplete="off">
+                                        </div>
+                                        <div class="form-group category-select d-none d-xl-block">
+                                            <select class="form-control selectpicker" name="category_id">
+                                                <option value="">{{__('All Categories')}}</option>
+                                                @foreach (\App\Category::all() as $key => $category)
+                                                <option value="{{ $category->id }}"
+                                                    @isset($category_id)
+                                                        @if ($category_id == $category->id)
+                                                            selected
+                                                        @endif
+                                                    @endisset
+                                                    >{{ __($category->name) }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <button class="d-none d-lg-block" type="submit">
+                                            <i class="la la-search la-flip-horizontal"></i>
+                                        </button>
+                                        <div class="typed-search-box d-none">
+                                            <div class="search-preloader">
+                                                <div class="loader"><div></div><div></div><div></div></div>
+                                            </div>
+                                            <div class="search-nothing d-none">
+
+                                            </div>
+                                            <div id="search-content">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form> --}}
+
 
                 </div><!-- End .header-search -->
             </div><!-- End .headeer-center -->

@@ -39,10 +39,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
-    <section class="py-4 gry-bg" id="cart-summary">
+    {{-- <section class="py-4 gry-bg" id="cart-summary">
         <div class="container">
             @if(Session::has('cart'))
                 <div class="row cols-xs-space cols-sm-space cols-md-space">
@@ -153,7 +153,7 @@
                 </div>
             @endif
         </div>
-    </section>
+    </section>  --}}
 
     <!-- Modal -->
     <div class="modal fade" id="GuestCheckout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -244,7 +244,7 @@
         </div>
     </div>
 
-@endsection --}}
+
 
 
 <main class="main">

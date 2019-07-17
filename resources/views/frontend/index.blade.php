@@ -126,15 +126,15 @@
                                                         </div><!-- End .price-box -->
 
                                                         <div class="product-action">
-                                                            <a href="#" class="paction add-wishlist" title="Add to Wishlist">
+                                                            <a href="#" class="paction add-wishlist" title="Add to Wishlist"  onclick="addToWishList({{ $product->id }})">
                                                                 <span>Add to Wishlist</span>
                                                             </a>
 
-                                                            <a href="product.html" class="paction add-cart" title="Add to Cart">
+                                                            <a href="#" class="paction add-cart" title="Add to Cart" onclick="showAddToCartModal({{ $product->id }})">
                                                                 <span>Add to Cart</span>
                                                             </a>
 
-                                                            <a href="#" class="paction add-compare" title="Add to Compare">
+                                                            <a href="#" class="paction add-compare" title="Add to Compare" onclick="addToCompare({{ $product->id }})">
                                                                 <span>Add to Compare</span>
                                                             </a>
                                                         </div><!-- End .product-action -->

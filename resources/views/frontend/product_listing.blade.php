@@ -1,25 +1,43 @@
 @extends('frontend.layouts.master')
 
+<style>
+.box-content{
+
+    padding:20px;
+}
+.single-category{
+    background:none;
+}
+.btn{
+    background:none;
+}
+.product-card-1{
+    border:solid 1px;
+    border-radius:5px;
+    padding:10px;
+}
+</style>
+
 @section('content')
 
     <div class="breadcrumb-area">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <ul class="breadcrumb">
+                    <ul class="list">
                         <li><a href="{{ route('home') }}">{{__('Home')}}</a></li>
                         <li><a href="{{ route('products') }}">{{__('All Categories')}}</a></li>
                         @if(isset($category_id))
-                            <li class="active"><a href="{{ route('products.category', $category_id) }}">{{ \App\Category::find($category_id)->name }}</a></li>
+                            <li class="list-item"><a href="{{ route('products.category', $category_id) }}">{{ \App\Category::find($category_id)->name }}</a><i class="fal fa-sign-in"></i></li>
                         @endif
                         @if(isset($subcategory_id))
                             <li ><a href="{{ route('products.category', \App\SubCategory::find($subcategory_id)->category->id) }}">{{ \App\SubCategory::find($subcategory_id)->category->name }}</a></li>
-                            <li class="active"><a href="{{ route('products.subcategory', $subcategory_id) }}">{{ \App\SubCategory::find($subcategory_id)->name }}</a></li>
+                            <li class="list-item"><a href="{{ route('products.subcategory', $subcategory_id) }}">{{ \App\SubCategory::find($subcategory_id)->name }}</a></li>
                         @endif
                         @if(isset($subsubcategory_id))
                             <li ><a href="{{ route('products.category', \App\SubSubCategory::find($subsubcategory_id)->subcategory->category->id) }}">{{ \App\SubSubCategory::find($subsubcategory_id)->subcategory->category->name }}</a></li>
                             <li ><a href="{{ route('products.subcategory', \App\SubsubCategory::find($subsubcategory_id)->subcategory->id) }}">{{ \App\SubsubCategory::find($subsubcategory_id)->subcategory->name }}</a></li>
-                            <li class="active"><a href="{{ route('products.subsubcategory', $subsubcategory_id) }}">{{ \App\SubSubCategory::find($subsubcategory_id)->name }}</a></li>
+                            <li class="list-item"><a href="{{ route('products.subsubcategory', $subsubcategory_id) }}">{{ \App\SubSubCategory::find($subsubcategory_id)->name }}</a></li>
                         @endif
                     </ul>
                 </div>
@@ -41,8 +59,8 @@
                             <div class="category-accordion">
                                 @foreach (\App\Category::all() as $key => $category)
                                     <div class="single-category">
-                                        <button class="btn w-100 category-name collapsed" type="button" data-toggle="collapse" data-target="#category-{{ $key }}" aria-expanded="true">
-                                            {{ __($category->name) }}
+                                        <button class="btn w-100" type="button" data-toggle="collapse" data-target="#category-{{ $key }}" aria-expanded="true">
+                                            {{ __($category->name) }}<i class="fas fa-arrow-to-right"></i>
                                         </button>
 
                                         <div id="category-{{ $key }}" class="collapse">
@@ -162,12 +180,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-1">
-                                <button type="button" name="button" onclick="morebrands(this)" class="more-brands-btn">
-                                    <i class="fa fa-plus"></i>
-                                    <span class="d-none d-md-inline-block">{{__('More')}}</span>
-                                </button>
-                            </div>
+                  
                         </div>
 
                         <form class="" id="search-form" action="{{ route('search') }}" method="GET">
@@ -188,10 +201,10 @@
                                             <label>{{__('Search')}}</label>
                                             <div class="search-widget">
                                                 <input class="form-control input-lg" type="text" name="q" placeholder="{{__('Search products')}}" @isset($query) value="{{ $query }}" @endisset>
-                                                <button type="submit" class="btn-inner">
-                                                    <i class="fa fa-search"></i>
-                                                </button>
-                                            </div>
+                                                {{-- <button type="submit" class="btn-inner">
+                                                    <i class="fa fa-search"></i> 
+                                                </button> --}}
+                                            </div> 
                                         </div>
                                     </div>
                                 </div>
@@ -210,34 +223,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-4">
-                                            <div class="sort-by-box px-1">
-                                                <div class="form-group">
-                                                    <label>{{__('Brands')}}</label>
-                                                    <select class="form-control sortSelect" data-placeholder="{{__('All Brands')}}" name="brand_id" onchange="filter()">
-                                                        <option value="">{{__('All Brands')}}</option>
-                                                        @foreach ($brands as $key => $id)
-                                                            @if (\App\Brand::find($id) != null)
-                                                                <option value="{{ $id }}" @isset($brand_id) @if ($brand_id == $id) selected @endif @endisset>{{ \App\Brand::find($id)->name }}</option>
-                                                            @endif
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="sort-by-box px-1">
-                                                <div class="form-group">
-                                                    <label>{{__('Sellers')}}</label>
-                                                    <select class="form-control sortSelect" data-placeholder="{{__('All Sellers')}}" name="seller_id" onchange="filter()">
-                                                        <option value="">{{__('All Sellers')}}</option>
-                                                        @foreach (\App\Seller::all() as $key => $seller)
-                                                            <option value="{{ $seller->id }}" @isset($seller_id) @if ($seller_id == $seller->id) selected @endif @endisset>{{ $seller->user->shop->name }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
+                                 
                                     </div>
                                 </div>
                             </div>
@@ -253,10 +239,7 @@
                                             <figure class="product-image-container">
                                                 <a href="{{ route('product', $product->slug) }}" class="product-image d-block" style="background-image:url('{{ asset($product->thumbnail_img) }}');">
                                                 </a>
-                                                <button class="btn-quickview" onclick="showAddToCartModal({{ $product->id }})"><i class="la la-eye"></i></button>
-                                                @if (strtotime($product->created_at) > strtotime('-10 day'))
-                                                    <span class="product-label label-hot">{{__('New')}}</span>
-                                                @endif
+                                         
                                             </figure>
                                             <div class="product-details text-center">
                                                 <h2 class="product-title text-truncate mb-0">
@@ -272,7 +255,7 @@
                                                     <span class="product-price strong-300"><strong>{{ home_discounted_base_price($product->id) }}</strong></span>
                                                 </div><!-- End .price-box -->
 
-                                                <div class="product-card-1-action">
+                                        <div class="product-card-1-action">
                                                     <button class="paction add-wishlist" title="Add to Wishlist" onclick="addToWishList({{ $product->id }})">
                                                         <i class="la la-heart-o"></i>
                                                     </button>
@@ -284,22 +267,14 @@
                                                     <button class="paction add-compare" title="Add to Compare" onclick="addToCompare({{ $product->id }})">
                                                         <i class="la la-refresh"></i>
                                                     </button>
-                                                </div><!-- End .product-action -->
+                                                </div><!-- End .product-action --> 
                                             </div><!-- End .product-details -->
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
                         </div>
-                        <div class="products-pagination bg-white p-3">
-                            <nav aria-label="Center aligned pagination">
-                                <ul class="pagination justify-content-center">
-                                    {{ $products->links() }}
-                                </ul>
-                            </nav>
-                        </div>
-
-                    <!-- </div> -->
+                  
                 </div>
             </div>
         </div>

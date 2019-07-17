@@ -1,22 +1,4 @@
 <div class="modal-body p-4">
-    <div class="row no-gutters cols-xs-space cols-sm-space cols-md-space">
-        <div class="col-lg-6">
-            <div class="product-gal d-flex flex-row-reverse">
-                <div class="product-gal-img">
-                    <img class="xzoom img-fluid" src="{{ asset($product->photos) }}" xoriginal="{{ asset($product->photos) }}" />
-                </div>
-                <div class="product-gal-thumb">
-                    <div class="xzoom-thumbs">
-                        @foreach ($product->photos as $key => $photo)
-                            <a href="{{ asset($photo) }}">
-                                <img class="xzoom-gallery" width="80" src="{{ asset($photo) }}"  @if($key == 0) xpreview="{{ asset($photo) }}" @endif>
-                            </a>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="col-lg-6">
             <!-- Product description -->
             <div class="product-description-wrapper">
