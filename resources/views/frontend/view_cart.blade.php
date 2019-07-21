@@ -334,12 +334,13 @@
                                             <div class="float-left">
                                                 <a href="{{route('products')}}" class="btn btn-outline-secondary">Continue Shopping</a>
                                             </div><!-- End .float-left -->
-
-                                            <div class="float-right">
-                                                <a href="#" class="btn btn-outline-secondary btn-clear-cart">Clear Shopping Cart</a>
-                                                <a href="#" class="btn btn-outline-secondary btn-update-cart">Update Shopping Cart</a>
-                                            </div><!-- End .float-right -->
                                         </td>
+
+                                        <td colspan="4" class="clearfix">
+                                                <div class="float-left">
+                                                    <a href="{{route('checkout.shipping_info')}}" class="btn btn-outline-secondary">Continue</a>
+                                                </div><!-- End .float-left -->
+                                            </td>
                                     </tr>
                                 </tfoot>
                             </table>

@@ -123,19 +123,12 @@
 
                                         <div class="product-action">
                                             <div class="number-input" style="padding-right: 10px">
-                                                <button type="button" class="minus  form-control"
-                                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                                        style="display: inline; width: 20px;">-
-                                                </button>
-                                                <input class="quantity form-control" min="1" name="quantity" value="1"
-                                                       style="display: inline; width: 60px;" readonly
-                                                       type="number">
-                                                <button type="button"
-                                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                                        style="display: inline; width: 20px;"
-                                                        class="plus form-control">+
-                                                </button>
+                                                    <div class="product-single-qty">
+                                                            <input class="horizontal-quantity form-control" name="quantity" value="1" type="number">
+                                                    </div><!-- End .product-single-qty -->
                                             </div>
+
+
                                             <button type="button" class="paction add-cart" title="{{__('Add to cart')}}"
                                                     onclick="addToCart()">
                                                 <span>{{__('Add to cart')}}</span>
@@ -159,22 +152,21 @@
 
                                             }
                                         </style>
-                                        <div class="row form-group no-gutters pb-3 d-none" id="chosen_price_div">
-                                            <div class="input-group number-input-wrapper ">
-                                                <span class="input-group-addon price" >{{__('Total Price')}}</span>
-                                                <div class="product-price" style="padding-left: 5px">
-                                                    <strong id="chosen_price">
-
-                                                    </strong>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <hr>
-                                        <div class="product-single-share mb-4">
-                                            <label>{{__('Share')}}:</label>
-                                            <!-- www.addthis.com share plugin-->
-                                            <div id="share"></div>
-                                        </div><!-- End .product single-share -->
+
+
+                                        <div class="row no-gutters pb-3" id="chosen_price_div">
+                                                <div class="col-4">
+                                                <div class="product-description-label">{{__('Total Price')}}:</div>
+                                                </div>
+                                                <div class="col-10">
+                                                    <div class="product-price">
+                                                        <strong id="total_price">
+
+                                                        </strong>
+                                                    </div>
+                                                </div>
+                                        </div>
 
 
                                     </form>
@@ -462,4 +454,23 @@
         </div><!-- End .featured-section -->
     </main><!-- End .main -->
     @endsection
+    <script type="text/javascript">
+        $(".quantity").TouchSpin({
+                        verticalbuttons: !1,
+                        buttonup_txt: "",
+                        buttondown_txt: "",
+                        buttondown_class: "btn btn-outline btn-down-icon",
+                        buttonup_class: "btn btn-outline btn-up-icon",
+                        initval: 1,
+                        min: 1
+        });
 
+        $(".quantity").change(function(){
+                getVariantPrice();
+        });
+
+            cartQuantityInitialize();
+            $('#option-choice-form input').on('change', function(){
+                getVariantPrice();
+            });
+    </script>

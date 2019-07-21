@@ -66,9 +66,9 @@
                                                     $product=$wishlist->product;
                                                   @endphp
                                                     @csrf
-                                                    <input type="hidden" name="id" value="{{ $wishlist->product->id }}">
+                                                     {{--<input type="hidden" name="id" value="{{ $wishlist->product->id }}"> --}}
 
-                                                    @foreach (json_decode($product->choice_options) as $key => $choice)
+                                                    {{-- @foreach (json_decode($product->choice_options) as $key => $choice)
                                                         <div class="product-filters-container">
                                                             <div class="product-single-filter">
                                                                 <label>{{ $choice->title }}:</label>
@@ -84,8 +84,8 @@
                                                                 </ul>
                                                             </div><!-- End .product-single-filter -->
                                                         </div><!-- End .product-filters-container -->
-                                                    @endforeach
-                                                    @if (count(json_decode($product->colors)) > 0)
+                                                    @endforeach --}}
+                                                    {{-- @if (count(json_decode($product->colors)) > 0)
                                                         <div class="product-filters-container">
                                                             <div class="product-single-filter">
                                                                 <label>{{__('Color')}}:</label>
@@ -102,7 +102,7 @@
                                                                 </ul>
                                                             </div><!-- End .product-single-filter -->
                                                         </div><!-- End .product-filters-container -->
-                                                    @endif
+                                                    @endif --}}
 
                                                     <style>
                                                         .price{
@@ -130,15 +130,10 @@
                                         <div class="card-footer p-3">
                                             <div class="product-buttons">
                                                 <div class="row align-items-center">
-                                                    <div class="col-2">
-                                                        <a href="#" class="link link--style-3" data-toggle="tooltip" data-placement="top" title="Remove from wishlist" onclick="removeFromWishlist({{ $wishlist->id }})">
-                                                            <i class="la la-close">__</i>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-10">
+                                                    <div class="col-8 m-auto">
 
-                                                        <button type="button" class="btn btn-block btn-base-1 btn-circle btn-icon-left" onclick="showAddToCartModal({{ $product->id }})">
-                                                            <i class="la la-shopping-cart mr-2">++</i>{{__('Add to cart')}}
+                                                        <button type="button" class="btn btn-block btn-danger btn-circle btn-icon-left" onclick="showAddToCartModal({{ $product->id }})">
+                                                            {{__('Add to cart')}}
                                                         </button>
                                                     </div>
                                                 </div>

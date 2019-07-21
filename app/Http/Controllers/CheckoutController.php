@@ -35,6 +35,7 @@ class CheckoutController extends Controller
         if($request->session()->get('order_id') != null){
             if($request->payment_option == 'paypal'){
                 $paypal = new PaypalController;
+               // return 'good';
                 return $paypal->getCheckout();
             }
             elseif ($request->payment_option == 'stripe') {

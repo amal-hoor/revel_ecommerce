@@ -13,40 +13,66 @@
                 </div><!-- End .header-dropown -->
 
                 <div class="header-dropdown">
-                    <a href="#"><img src="{{asset('assets/images/flags/en.png')}}" alt="England flag">ENGLISH</a>
-                    <div class="header-menu">
-                        <ul>
-                            <li><a href="#"><img src="{{asset('assets/images/flags/en.png')}}" alt="England flag">ENGLISH</a></li>
-                            <li><a href="#"><img src="{{asset('assets/images/flags/fr.png')}}" alt="France flag">FRENCH</a></li>
-                        </ul>
-                    </div><!-- End .header-menu -->
+                        <li class="dropdown" id="lang-change">
+                                @php
+                                    if(Session::has('locale')){
+                                        $locale = Session::get('locale', Config::get('app.locale'));
+                                    }
+                                    else{
+                                        $locale = 'en';
+                                    }
+                                @endphp
+                                <a href="" class="dropdown-toggle top-bar-item" data-toggle="dropdown">
+                                    <img src="{{ asset('frontend/images/icons/flags/'.$locale.'.png') }}" class="flag"><span class="language">{{ \App\Language::where('code', $locale)->first()->name }}</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    @foreach (\App\Language::all() as $key => $language)
+                                        <li class="dropdown-item @if($locale == $language) active @endif">
+                                            <a href="#" data-flag="{{ $language->code }}"><img src="{{ asset('frontend/images/icons/flags/'.$language->code.'.png') }}" class="flag"><span class="language">{{ $language->name }}</span></a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                        </li>
+
+
                 </div><!-- End .header-dropown -->
 
-                <div class="dropdown compare-dropdown">
+                <div class="dropdown compare-dropdown compare">
                     <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                        <i class="icon-retweet"></i> Compare (2)
+                         <i class="icon-retweet"></i>
+                        <span class="nav-box-text d-none d-xl-inline-block">{{__('Compare')}}</span>
+                        @if(Session::has('compare'))
+                            <span class="nav-box-number">{{ count(Session::get('compare'))}}</span>
+                        @else
+                            <span class="nav-box-number">0</span>
+                        @endif
                     </a>
 
-                    <div class="dropdown-menu" >
+                    @if(Session::has('compare'))
+                    <div class="dropdown-menu compare_items_sidenav" >
                         <div class="dropdownmenu-wrapper">
                             <ul class="compare-products">
+                                    @foreach (Session::get('compare') as $key => $item)
+                                    @php
+                                    $product=App\Product::find($item)
+                                    @endphp
                                 <li class="product">
                                     <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
-                                    <h4 class="product-title"><a href="product.html">Lady White Top</a></h4>
+                                    <h4 class="product-title"><a href="{{route('product',$product->slug)}}">{{$product->name}}</a></h4>
+                                    <img src="{{$product->photos}}">
                                 </li>
-                                <li class="product">
-                                    <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
-                                    <h4 class="product-title"><a href="product.html">Blue Women Shirt</a></h4>
-                                </li>
+                                   @endforeach
                             </ul>
 
                             <div class="compare-actions">
-                                <a href="#" class="action-link">Clear All</a>
+                                <a href="{{route('compare.reset')}}" class="action-link">Clear All</a>
                                 <a href="#" class="btn btn-primary">Compare</a>
                             </div>
                         </div><!-- End .dropdownmenu-wrapper -->
                     </div><!-- End .dropdown-menu -->
+                    @endif
                 </div><!-- End .dropdown -->
+
             </div><!-- End .header-left -->
 
             <div class="header-right">
@@ -74,9 +100,13 @@
                         </ul>
                     </div><!-- End .header-menu -->
                 </div><!-- End .header-dropown -->
+
+
             </div><!-- End .header-right -->
+
         </div><!-- End .container -->
     </div><!-- End .header-top -->
+
 
     <div class="header-middle">
         <div class="container">
@@ -119,45 +149,6 @@
                         </div><!-- End .header-search-wrapper -->
                     </form>
 
-                           {{-- <form action="{{ route('search') }}" method="GET">
-                                    <div class="header-search-wrapper">
-                                        <div class="d-lg-none search-box-back">
-                                            <button class="" type="button"><i class="la la-long-arrow-left"></i></button>
-                                        </div>
-                                        <div class="w-100">
-                                            <input type="text" aria-label="Search" id="search" name="q" class="w-100" placeholder="I'm shopping for..." autocomplete="off">
-                                        </div>
-                                        <div class="form-group category-select d-none d-xl-block">
-                                            <select class="form-control selectpicker" name="category_id">
-                                                <option value="">{{__('All Categories')}}</option>
-                                                @foreach (\App\Category::all() as $key => $category)
-                                                <option value="{{ $category->id }}"
-                                                    @isset($category_id)
-                                                        @if ($category_id == $category->id)
-                                                            selected
-                                                        @endif
-                                                    @endisset
-                                                    >{{ __($category->name) }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <button class="d-none d-lg-block" type="submit">
-                                            <i class="la la-search la-flip-horizontal"></i>
-                                        </button>
-                                        <div class="typed-search-box d-none">
-                                            <div class="search-preloader">
-                                                <div class="loader"><div></div><div></div><div></div></div>
-                                            </div>
-                                            <div class="search-nothing d-none">
-
-                                            </div>
-                                            <div id="search-content">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form> --}}
-
 
                 </div><!-- End .header-search -->
             </div><!-- End .headeer-center -->
@@ -173,42 +164,38 @@
 
 
                 <div class="d-inline-block" data-hover="dropdown">
-                    <div class="nav-cart-box dropdown" id="cart_items">
-                        <a href="" class="nav-box-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="la la-shopping-cart d-inline-block nav-box-icon"></i>
-                            <span class="nav-box-text d-none d-xl-inline-block">{{__('Cart')}}</span>
-                            @if(Session::has('cart'))
-                                <span class="nav-box-number">{{ count(Session::get('cart'))}}</span>
-                            @else
-                                <span class="nav-box-number">0</span>
-                            @endif
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-right px-0">
-                            <li>
-                                <div class="dropdown-cart px-0 p-5">
-                                    @if(Session::has('cart'))
+                        <div id="cart_items" class="dropdown cart-dropdown">
+                                <a href="" class="nav-box-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="la la-shopping-cart d-inline-block nav-box-icon"></i>
+                                        <span class="nav-box-text d-none d-xl-inline-block">{{__('Cart')}}</span>
+                                        @if(Session::has('cart'))
+                                            <span class="nav-box-number">{{ count(Session::get('cart'))}}</span>
+                                        @else
+                                            <span class="nav-box-number">0</span>
+                                        @endif
+                                </a>
+
+                                <div class="dropdown-menu" >
+                                    <div class="dropdownmenu-wrapper">
+                                        @if(Session::has('cart'))
                                         @if(count($cart = Session::get('cart')) > 0)
-                                            <div class="dc-header">
-                                                <h3 class="heading heading-6 strong-700">{{__('Cart Items')}}</h3>
-                                            </div>
-                                            <div class="dropdown-cart-items c-scrollbar">
-                                                @php
-                                                    $total = 0;
-                                                @endphp
-                                                @foreach($cart as $key => $cartItem)
-                                                    @php
-                                                        $product = \App\Product::find($cartItem['id']);
-                                                        $total = $total + $cartItem['price']*$cartItem['quantity'];
-                                                    @endphp
-                                                    <div class="dc-item">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="dc-image">
-                                                                <a href="{{ route('product', $product->slug) }}">
-                                                                    <img src="{{ asset($product->thumbnail_img) }}" class="img-fluid" alt="">
-                                                                </a>
-                                                            </div>
-                                                            <div class="dc-content">
-                                                                <span class="d-block dc-product-name text-capitalize strong-600 mb-1">
+                                            <div class="dropdown-cart-header">
+                                                    <span class="nav-box-number">{{ count(Session::get('cart'))}}</span>
+
+                                            </div><!-- End .dropdown-cart-header -->
+                                        @php
+                                            $total = 0;
+                                        @endphp
+                                         @foreach($cart as $key => $cartItem)
+                                            @php
+                                                $product = \App\Product::find($cartItem['id']);
+                                                $total = $total + $cartItem['price']*$cartItem['quantity'];
+                                            @endphp
+                                        <div class="dropdown-cart-products">
+                                            <div class="product">
+                                                <div class="product-details">
+                                                    <h4 class="product-title">
+                                                            <span class="d-block dc-product-name text-capitalize strong-600 mb-1">
                                                                     <a href="{{ route('product', $product->slug) }}">
                                                                         {{ __($product->name) }}
                                                                     </a>
@@ -216,47 +203,58 @@
 
                                                                 <span class="dc-quantity">x{{ $cartItem['quantity'] }}</span>
                                                                 <span class="dc-price">{{ single_price($cartItem['price']*$cartItem['quantity']) }}</span>
-                                                            </div>
-                                                            <div class="dc-actions">
-                                                                <button onclick="removeFromCart({{ $key }})">
-                                                                    <i class="la la-close"></i>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                            <div class="dc-item py-3">
-                                                <span class="subtotal-text">{{__('Subtotal')}}</span>
-                                                <span class="subtotal-amount">{{ single_price($total) }}</span>
-                                            </div>
-                                            <div class="py-2 text-center dc-btn">
-                                                <ul class="inline-links inline-links--style-3">
-                                                    <li class="pr-3">
-                                                        <a href="{{ route('cart') }}" class="link link--style-1 text-capitalize btn btn-base-1 px-3 py-1">
-                                                            <i class="la la-shopping-cart"></i> {{__('View cart')}}
+                                                    </h4>
+
+                                                    <span class="cart-product-info">
+                                                        <span class="cart-product-qty">1</span>
+                                                        x $99.00
+                                                    </span>
+                                                </div><!-- End .product-details -->
+
+                                                <figure class="product-image-container">
+                                                        <a href="{{ route('product', $product->slug) }}">
+                                                                <img src="{{ asset($product->thumbnail_img) }}" class="img-fluid" alt="">
                                                         </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{{ route('checkout.shipping_info') }}" class="link link--style-1 text-capitalize btn btn-base-1 px-3 py-1 light-text">
-                                                            <i class="la la-mail-forward"></i> {{__('Checkout')}}
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        @else
-                                            <div class="dc-header">
-                                                <h3 class="heading heading-6 strong-700">{{__('Your Cart is empty')}}</h3>
-                                            </div>
-                                        @endif
-                                    @else
-                                        <div class="dc-header">
-                                            <h3 class="heading heading-6 strong-700">{{__('Your Cart is empty')}}</h3>
+                                                    <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
+                                                </figure>
+                                            </div><!-- End .product -->
+
+                                          @endforeach
                                         </div>
+
+                                        <div class="dropdown-cart-total">
+                                            {{-- <span>Total</span> --}}
+
+                                            <span class="subtotal-text">{{__('Subtotal')}}</span>
+                                            <span class="subtotal-amount">{{ single_price($total) }}</span>
+                                        </div><!-- End .dropdown-cart-total -->
+
+                                        <div class="dropdown-cart-action">
+                                                <div class="py-2 text-center">
+
+                                                        <a href="{{ route('cart') }}" class="btn btn-success  text-capitalize px-3 py-1">
+                                                                     {{__('View cart')}}
+                                                        </a>
+                                                        <a href="{{ route('checkout.shipping_info') }}" class="btn btn-danger text-capitalize px-3 py-1 light-text">
+                                                                    {{__('Checkout')}}
+                                                        </a>
+                                                </div>
+                                        </div><!-- End .dropdown-cart-total -->
+                                    </div><!-- End .dropdownmenu-wrapper -->
+                                    @else
+                                    <div class="dc-header">
+                                            <h3 class="heading heading-6 strong-700">{{__('Your Cart is empty')}}</h3>
+                                    </div>
                                     @endif
-                                </div>
-                            </li>
-                        </ul>
+                                    @else
+                                    <div class="dc-header">
+                                        <h3 class="heading heading-6 strong-700">{{__('Your Cart is empty')}}</h3>
+                                    </div>
+                                    @endif
+                                </div><!-- End .dropdown-menu -->
+                            </div><!-- End .dropdown -->
+
+                        </div>
                     </div>
                 </div>
 
@@ -266,46 +264,38 @@
 
     <div class="header-bottom sticky-header">
         <div class="container">
+
             <nav class="main-nav">
                 <ul class="menu sf-arrows">
-                    <li class="active"><a href="index-2.html">Home</a></li>
+                    <li class="active"><a href="{{ route('home') }}">HOME</a></li>
 
-
-
-                        @foreach (\App\Category::all()->take(11) as $key => $category)
-                            <li>
-                            <a href="category.html" class="sf-with-ul">{{ __($category->name) }}</a>
+                    @foreach (\App\Category::all()->take(11) as $key => $category)
+                        <li>
+                            <a href="#" class="sf-with-ul">{{ __($category->name) }}</a>
+                            <ul>
                                 @if(count($category->subcategories)>0)
-                                    <div class="megamenu megamenu-fixed-width">
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <ul>
-                                                            @foreach ($category->subcategories as $subcategory)
-                                                                <li><a href="{{ route('products.subcategory',$subcategory->id)}}">_{{ __($subcategory->name) }}<span class="tip tip-hot">Hot!</span></a></li>
+                                @foreach ($category->subcategories as $subcategory)
 
-                                                                        @foreach ($subcategory->subsubcategories as $subsubcategory)
-                                                                        <li><a href="{{ route('products.subsubcategory', $subsubcategory->id) }}">__{{ __($subsubcategory->name) }}</a></li>
-                                                                        @endforeach
-
-                                                            @endforeach
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <li><a href="{{ route('products.subcategory',$subcategory->id)}}">_{{ __($subcategory->name) }}<span class="tip tip-hot">Hot!</span></a>
+                                            @if(count($subcategory->subsubcategories)>0)
+                                            <ul>
+                                                @foreach ($subcategory->subsubcategories as $subsubcategory)
+                                                <li><a href="{{ route('products.subsubcategory', $subsubcategory->id) }}">__{{ __($subsubcategory->name) }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                            @endif
+                                        </li>
+                                @endforeach
                                 @endif
-                            </li>
-                        @endforeach
 
+                            </ul>
+                        </li>
+                    @endforeach
 
-
-                    <li class="float-right buy-effect"><a href="#"><span>Buy Porto!</span></a></li>
-                    <li class="float-right"><a href="#">Special Offer!</a></li>
-                </ul>
+                <ul>
             </nav>
+
         </div><!-- End .header-bottom -->
     </div><!-- End .header-bottom -->
+
 </header><!-- End .header -->

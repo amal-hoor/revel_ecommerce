@@ -67,7 +67,9 @@ class PaypalController extends Controller
     	$payer = PayPal::Payer();
     	$payer->setPaymentMethod('paypal');
     	$amount = PayPal::Amount();
-    	$amount->setCurrency('USD');
+        $amount->setCurrency('USD');
+
+
 
         if(Session::has('payment_type')){
             if(Session::get('payment_type') == 'cart_payment'){
@@ -80,22 +82,26 @@ class PaypalController extends Controller
                 $description = 'Payment to seller';
             }
         }
+
     	// This is the simple way,
     	// you can alternatively describe everything in the order separately;
     	// Reference the PayPal PHP REST SDK for details.
     	$transaction = PayPal::Transaction();
     	$transaction->setAmount($amount);
-    	$transaction->setDescription($description);
+        $transaction->setDescription($description);
+
     	$redirectUrls = PayPal:: RedirectUrls();
     	$redirectUrls->setReturnUrl(url('paypal/payment/done'));
-    	$redirectUrls->setCancelUrl(url('paypal/payment/cancel'));
-    	$payment = PayPal::Payment();
-    	$payment->setIntent('sale');
-    	$payment->setPayer($payer);
-    	$payment->setRedirectUrls($redirectUrls);
-    	$payment->setTransactions(array($transaction));
-    	$response = $payment->create($this->_apiContext);
-    	$redirectUrl = $response->links[1]->href;
+        $redirectUrls->setCancelUrl(url('paypal/payment/cancel'));
+     	$payment = PayPal::Payment();
+        $payment->setIntent('sale');
+        $payment->setPayer($payer);
+        $payment->setRedirectUrls($redirectUrls);
+        $payment->setTransactions(array($transaction));
+
+        $response = $payment->create($this->_apiContext);
+        $redirectUrl = $response->links[1]->href;
+
 
     	return Redirect::to( $redirectUrl );
     }

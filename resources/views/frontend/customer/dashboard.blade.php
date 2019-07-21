@@ -89,14 +89,14 @@
                         </div>
                         <div class="row">
                             <div class="col-md-5">
-                                <div class="form-box bg-white mt-4">
-                                    <div class="form-box-title px-3 py-2 clearfix ">
+                                <div class="form-box bg-white mt-2">
+                                    <div class="form-box-title px-3 clearfix ">
                                         {{__('Saved Shipping Info')}}
                                         <div class="float-right">
                                             <a href="{{ route('profile') }}" class="btn btn-link btn-sm">{{__('Edit')}}</a>
                                         </div>
                                     </div>
-                                    <div class="form-box-content p-3">
+                                    <div class="form-box-content py-2">
                                         <table>
                                             <tr>
                                                 <td>{{__('Address')}}:</td>

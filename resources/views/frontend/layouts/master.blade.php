@@ -379,8 +379,9 @@
                 url: '{{ route('products.variant_price') }}',
                 data: $('#option-choice-form').serializeArray(),
                 success: function(data){
+                    console.log(data);
                     $('#option-choice-form #chosen_price_div').removeClass('d-none');
-                    $('#option-choice-form #chosen_price_div #chosen_price').html(data);
+                    $('#total_price').html(data);
                 }
             });
         }
@@ -395,6 +396,7 @@
         $.each(names, function() { // then count them
             count++;
         });
+
         if($('input:radio:checked').length == count){
             return true;
         }

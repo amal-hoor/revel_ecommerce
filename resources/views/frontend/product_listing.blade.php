@@ -12,7 +12,7 @@
     background:none;
 }
 .product-card-1{
-    border:solid 1px;
+    border:solid  1px;
     border-radius:5px;
     padding:10px;
 }
@@ -172,15 +172,10 @@
                                             @endphp
                                         @endif
 
-                                        @foreach ($brands as $key => $id)
-                                            @if (\App\Brand::find($id) != null)
-                                                <li><a href="{{ route('products.brand', $id) }}"><img src="{{ asset(\App\Brand::find($id)->logo) }}" alt="" class="img-fluid"></a></li>
-                                            @endif
-                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
-                  
+
                         </div>
 
                         <form class="" id="search-form" action="{{ route('search') }}" method="GET">
@@ -202,9 +197,9 @@
                                             <div class="search-widget">
                                                 <input class="form-control input-lg" type="text" name="q" placeholder="{{__('Search products')}}" @isset($query) value="{{ $query }}" @endisset>
                                                 {{-- <button type="submit" class="btn-inner">
-                                                    <i class="fa fa-search"></i> 
+                                                    <i class="fa fa-search"></i>
                                                 </button> --}}
-                                            </div> 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -223,7 +218,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                 
+
                                     </div>
                                 </div>
                             </div>
@@ -237,9 +232,10 @@
                                     <div class="col-xxl-3 col-xl-4 col-lg-3 col-md-4 col-6">
                                         <div class="product-card-1 mb-2">
                                             <figure class="product-image-container">
-                                                <a href="{{ route('product', $product->slug) }}" class="product-image d-block" style="background-image:url('{{ asset($product->thumbnail_img) }}');">
-                                                </a>
-                                         
+                                                {{-- <a href="{{ route('product', $product->slug) }}" class="product-image d-block" style="background-image:url('{{ asset($product->thumbnail_img) }}');">
+                                                </a> --}}
+                                            <a href="{{ route('product', $product->slug) }}"><img src="{{asset($product->thumbnail_img)}}"></a>
+
                                             </figure>
                                             <div class="product-details text-center">
                                                 <h2 class="product-title text-truncate mb-0">
@@ -267,14 +263,14 @@
                                                     <button class="paction add-compare" title="Add to Compare" onclick="addToCompare({{ $product->id }})">
                                                         <i class="la la-refresh"></i>
                                                     </button>
-                                                </div><!-- End .product-action --> 
+                                                </div><!-- End .product-action -->
                                             </div><!-- End .product-details -->
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
                         </div>
-                  
+
                 </div>
             </div>
         </div>

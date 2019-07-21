@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="col-lg-9">
-                    <div class="main-content">
+                    <div class="">
                         <!-- Page title -->
                         <div class="page-title">
                             <div class="row align-items-center">

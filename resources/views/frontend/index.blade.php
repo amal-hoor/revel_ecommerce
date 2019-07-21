@@ -4,17 +4,12 @@
 
 
 <main class="main">
-        <div class="home-top-container">
+        <div class="container">
             <div class="home-slider owl-carousel owl-carousel-lazy">
                 @foreach (\App\Slider::where('published', 1)->get() as $key => $slider)
                     <div class="home-slide">
-                        <img class="owl-lazy" src="{{ asset($slider->photo) }}" alt="slider image">
-                        <div class="home-slide-content">
-                            <h1>up to 40% off</h1>
-                            <h3>woman clothing</h3>
-                            <!--<a href="category.html" class="btn btn-primary">Shop Now</a>-->
-                        </div><!-- End .home-slide-content -->
-                    </div><!-- End .home-slide -->
+                        <img class="owl-lazy" src="{{ asset($slider->photo) }}"  data-src="{{ asset($slider->photo) }}" alt="slider image">
+                    </div><!-- End .home-slide-content -->
                 @endforeach
             </div>
         </div>
@@ -108,7 +103,7 @@
                                                         <a href="{{ route('product', $product->slug) }}" class="product-image">
                                                             <img src="{{ asset($product->photos)}}" alt="product">
                                                         </a>
-                                                        <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                                                    <a href="ajax/product-quick-view.html" class="btn-quickview">{{ $product->name }}</a>
                                                     </figure>
 
 
@@ -158,7 +153,7 @@
                                                 <a href="product.html" class="product-image">
                                                     <img src="{{$product->photos}}" alt="product">
                                                 </a>
-                                                <a href="ajax/product-quick-view.html" class="btn-quickview">Quick View</a>
+                                                <a href="ajax/product-quick-view.html" class="btn-quickview">{{$product->name}}</a>
                                             </figure>
                                             <div class="product-details">
                                                 <div class="ratings-container">
@@ -174,15 +169,15 @@
                                                 </div><!-- End .price-box -->
 
                                                 <div class="product-action">
-                                                    <a href="#" class="paction add-wishlist" title="Add to Wishlist">
+                                                    <a href="#" class="paction add-wishlist" title="Add to Wishlist" onclick="addToWishList({{ $product->id }})">
                                                         <span>Add to Wishlist</span>
                                                     </a>
 
-                                                    <a href="product.html" class="paction add-cart" title="Add to Cart">
+                                                    <a href="product.html" class="paction add-cart" title="Add to Cart" onclick="showAddToCartModal({{ $product->id }})">
                                                         <span>Add to Cart</span>
                                                     </a>
 
-                                                    <a href="#" class="paction add-compare" title="Add to Compare">
+                                                    <a href="#" class="paction add-compare" title="Add to Compare" onclick="addToCompare({{ $product->id }})">
                                                         <span>Add to Compare</span>
                                                     </a>
                                                 </div><!-- End .product-action -->
@@ -217,13 +212,11 @@
         </div><!-- End .container -->
 
         <div class="mb-4"></div><!-- margin -->
-@php
-$brands = \App\Brand::all();
-@endphp
+
         <div class="partners-container">
             <div class="container">
                 <div class="partners-carousel owl-carousel owl-theme">
-                    @foreach ($brands as $brand)
+                    @foreach(\App\Brand::all() as $brand)
                                 <a href="#" class="partner">
                                     <img src="{{ asset($brand->logo) }}" alt="logo">
                                 </a>
