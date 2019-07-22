@@ -176,10 +176,11 @@
                                                     <a href="product.html" class="paction add-cart" title="Add to Cart" onclick="showAddToCartModal({{ $product->id }})">
                                                         <span>Add to Cart</span>
                                                     </a>
-
-                                                    <a href="#" class="paction add-compare" title="Add to Compare" onclick="addToCompare({{ $product->id }})">
+                                                     <form action="" method="post">
+                                                    <a href="#" class="paction add-compare" id="compare" title="Add to Compare" onclick="addToCompare({{ $product->id }})">
                                                         <span>Add to Compare</span>
                                                     </a>
+                                                   </form>
                                                 </div><!-- End .product-action -->
                                             </div><!-- End .product-details -->
                                         </div><!-- End .product -->

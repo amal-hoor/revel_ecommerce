@@ -37,7 +37,7 @@
 
                 </div><!-- End .header-dropown -->
 
-                <div class="dropdown compare-dropdown compare">
+                <div class="dropdown compare-dropdown" id="compare">
                     <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                          <i class="icon-retweet"></i>
                         <span class="nav-box-text d-none d-xl-inline-block">{{__('Compare')}}</span>
@@ -66,7 +66,7 @@
 
                             <div class="compare-actions">
                                 <a href="{{route('compare.reset')}}" class="action-link">Clear All</a>
-                                <a href="#" class="btn btn-primary">Compare</a>
+
                             </div>
                         </div><!-- End .dropdownmenu-wrapper -->
                     </div><!-- End .dropdown-menu -->

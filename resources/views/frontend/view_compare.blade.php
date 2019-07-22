@@ -1,4 +1,4 @@
-@extends('frontend.layouts.app')
+@extends('frontend.layouts.master')
 
 @section('content')
 
@@ -21,7 +21,7 @@
     </div>
 
 
-    <section class="gry-bg py-4">
+    <section class="gry-bg py-4" id="compare">
         <div class="container">
             <div class="row">
                 <div class="col">
