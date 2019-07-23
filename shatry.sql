@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2019 at 04:53 PM
+-- Generation Time: Jul 23, 2019 at 06:11 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `revel_ecommerce`
+-- Database: `shatry`
 --
 
 -- --------------------------------------------------------
@@ -43,13 +43,10 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `photo`, `url`, `position`, `published`, `created_at`, `updated_at`) VALUES
-(4, 'uploads/banners/banner.jpg', 'http://192.168.10.107/shop/', 1, 1, '2019-03-12 05:58:23', '2019-06-11 04:56:50'),
-(5, 'uploads/banners/banner.jpg', 'http://192.168.10.107/shop/public/', 1, 1, '2019-03-12 05:58:41', '2019-03-12 05:58:57'),
-(6, 'uploads/banners/banner.jpg', 'http://192.168.10.107/shop/public/', 2, 1, '2019-03-12 05:58:52', '2019-03-12 05:58:57'),
-(7, 'uploads/banners/banner.jpg', '#', 2, 1, '2019-05-26 05:16:38', '2019-05-26 05:17:34'),
-(8, 'uploads/banners/banner.jpg', 'http://', 2, 1, '2019-06-11 05:00:06', '2019-06-11 05:00:27'),
-(9, 'uploads/banners/banner.jpg', 'http://', 1, 1, '2019-06-11 05:00:15', '2019-06-11 05:00:29'),
-(10, 'uploads/banners/banner.jpg', 'http://192.168.10.107/shop/', 1, 0, '2019-06-11 05:00:24', '2019-06-11 05:01:56');
+(8, 'uploads/banners/home2.jpg\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', 'http://lagrueg.com/product/Fraser-Vertical-has-88-feet-jknKz', 1, 1, '2019-06-11 05:00:06', '2019-07-04 14:10:25'),
+(11, 'uploads/banners/home1.jpg', 'https://lagrueg.com/search?subsubcategory_id=18', 1, 1, '2019-07-03 17:21:29', '2019-07-03 17:21:34'),
+(12, 'uploads/banners/home3.jpg', 'https://lagrueg.com/search?subsubcategory_id=18', 1, 1, '2019-07-03 17:21:55', '2019-07-03 17:21:59'),
+(15, 'uploads/banners/banner.jpeg\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', 'http://lagrueg.com/product/Fraser-Vertical-has-88-feet-jknKz', 2, 1, '2019-06-11 05:00:06', '2019-07-04 14:10:25');
 
 -- --------------------------------------------------------
 
@@ -71,10 +68,11 @@ CREATE TABLE `brands` (
 --
 
 INSERT INTO `brands` (`id`, `name`, `logo`, `top`, `created_at`, `updated_at`) VALUES
-(1, 'Demo brand', 'uploads/brands/1.png', 1, '2019-03-12 06:05:56', '2019-06-11 04:25:59'),
-(2, 'Demo brand1', 'uploads/brands/2.png', 1, '2019-03-12 06:06:13', '2019-06-11 04:25:59'),
-(3, 'Demo Brand2', 'uploads/brands/3.png', 0, '2019-07-13 12:59:17', '2019-07-13 12:59:17'),
-(4, 'Demo Brand3', 'uploads/brands/4.png', 0, '2019-07-13 12:59:17', '2019-07-13 12:59:17');
+(3, 'Bompani', 'uploads/brands/1.png', 0, '2019-07-03 17:26:23', '2019-07-03 17:26:23'),
+(4, 'HAAS', 'uploads/brands/2.png', 0, '2019-07-03 17:26:55', '2019-07-03 17:26:55'),
+(5, 'Westing house', 'uploads/brands/3.png', 0, '2019-07-03 17:27:23', '2019-07-03 17:27:23'),
+(6, 'CAEFEET', 'uploads/brands/4.png', 0, '2019-07-03 17:27:42', '2019-07-03 17:27:42'),
+(7, 'UNIX', 'uploads/brands/5.png', 0, '2019-07-03 17:28:04', '2019-07-03 17:28:04');
 
 -- --------------------------------------------------------
 
@@ -112,7 +110,7 @@ INSERT INTO `business_settings` (`id`, `type`, `value`, `created_at`, `updated_a
 (15, 'sslcommerz_sandbox', '1', '2019-01-16 12:44:18', '2019-03-14 00:07:26'),
 (16, 'sslcommerz_payment', '0', '2019-01-24 09:39:07', '2019-01-29 06:13:46'),
 (17, 'vendor_commission', '20', '2019-01-31 06:18:04', '2019-04-13 06:49:26'),
-(18, 'verification_form', '[{\"type\":\"text\",\"label\":\"Your name\"},{\"type\":\"text\",\"label\":\"Shop name\"},{\"type\":\"text\",\"label\":\"Email\"},{\"type\":\"text\",\"label\":\"License No\"},{\"type\":\"text\",\"label\":\"Full Address\"},{\"type\":\"text\",\"label\":\"Phone Number\"},{\"type\":\"file\",\"label\":\"Tax Papers\"}]', '2019-02-03 11:36:58', '2019-02-16 06:14:42'),
+(18, 'verification_form', '[{\"type\":\"text\",\"label\":\"amal\"},{\"type\":\"text\",\"label\":\"sese\"},{\"type\":\"text\",\"label\":\"sellerio@yahoo.com\"},{\"type\":\"text\",\"label\":\"123456\"},{\"type\":\"text\",\"label\":\"egypt street\"},{\"type\":\"text\",\"label\":\"0122233333\"},{\"type\":\"file\",\"label\":\"ewe\"}]', '2019-02-03 11:36:58', '2019-07-21 11:12:40'),
 (19, 'google_analytics', '0', '2019-02-06 12:22:35', '2019-02-06 12:22:35'),
 (20, 'facebook_login', '0', '2019-02-07 12:51:59', '2019-02-08 19:41:15'),
 (21, 'google_login', '0', '2019-02-07 12:52:10', '2019-02-08 19:41:14'),
@@ -121,8 +119,8 @@ INSERT INTO `business_settings` (`id`, `type`, `value`, `created_at`, `updated_a
 (24, 'payumoney_sandbox', '1', '2019-03-05 11:38:17', '2019-03-05 05:39:18'),
 (36, 'facebook_chat', '0', '2019-04-15 11:45:04', '2019-04-15 11:45:04'),
 (37, 'email_verification', '0', '2019-04-30 07:30:07', '2019-04-30 07:30:07'),
-(38, 'wallet_system', '0', '2019-05-19 08:05:44', '2019-05-19 02:11:57'),
-(39, 'coupon_system', '0', '2019-06-11 09:46:18', '2019-06-11 09:46:18'),
+(38, 'wallet_system', '1', '2019-05-19 08:05:44', '2019-07-04 16:00:48'),
+(39, 'coupon_system', '1', '2019-06-11 09:46:18', '2019-07-04 16:00:47'),
 (40, 'current_version', '1.4', '2019-06-11 09:46:18', '2019-06-11 09:46:18');
 
 -- --------------------------------------------------------
@@ -147,9 +145,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `banner`, `icon`, `featured`, `top`, `created_at`, `updated_at`) VALUES
-(1, 'Demo category 1', 'uploads/categories/banner/category-banner.jpg', 'uploads/categories/icon/KjJP9wuEZNL184XVUk3S7EiZ8NnBN99kiU4wdvp3.png', 1, 1, '2019-06-13 11:40:40', '2019-06-11 04:25:59'),
-(2, 'Demo category 2', 'uploads/categories/banner/category-banner.jpg', 'uploads/categories/icon/h9XhWwI401u6sRoLITEk9SUMRAlWN8moGrpPfS6I.png', 1, 0, '2019-06-13 11:40:40', '2019-03-12 06:45:37'),
-(3, 'Demo category 3', 'uploads/categories/banner/category-banner.jpg', 'uploads/categories/icon/rKAPw5rNlS84JtD9ZQqn366jwE11qyJqbzAe5yaA.png', 1, 1, '2019-06-13 11:40:40', '2019-06-11 04:25:59');
+(3, 'Air condition', 'uploads/categories/banner/7JuLKUw1HeJJfiUGZZKgQjayIgT2Jx8V43mo4Anb.jpeg', 'uploads/categories/icon/bLV7YjGN4LtlTkoLj1M1LdLIFMkFmwcWDn5BcKN7.png', 1, 1, '2019-07-03 16:43:41', '2019-07-03 14:43:41'),
+(4, 'Home Appliance', 'uploads/categories/banner/vpF4ONXkS7KsWlBysIEZXPxLlrxWRAiijGmqJRqf.png', 'uploads/categories/icon/lua03ed8XdQ1w7dCHCy4HRAdH6edHmFZUUxXsvwP.png', 1, 0, '2019-07-03 16:42:44', '2019-07-03 14:42:44'),
+(5, 'small  Appliance', 'uploads/categories/banner/5m0dsBFCHYdPTJBC8ltviK2hv8vHxgcg1aiAMhrG.jpeg', 'uploads/categories/icon/gu1F0ASb6wvhtaqmAXSyKICV4IBO4sER0gqemFLu.png', 1, 0, '2019-07-03 16:47:27', '2019-07-03 14:47:27'),
+(6, 'Deals', 'uploads/categories/banner/joicbzYbkSOt1VPOHu5qoAOY3oqOBSgK8w35JByU.jpeg', 'uploads/categories/icon/NVOZXJhvD7rhcW0CtSncaOCzLiryC1Eu7TqWXHGH.png', 1, 0, '2019-07-03 16:49:12', '2019-07-03 14:49:12');
 
 -- --------------------------------------------------------
 
@@ -647,6 +646,13 @@ CREATE TABLE `coupons` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `coupons`
+--
+
+INSERT INTO `coupons` (`id`, `type`, `code`, `details`, `discount`, `discount_type`, `start_date`, `end_date`, `created_at`, `updated_at`) VALUES
+(1, 'cart_base', 'test_coupon', '{\"min_buy\":\"100\",\"max_discount\":\"90\"}', 50.00, 'percent', 1561939200, 1565136000, '2019-07-03 11:32:41', '2019-07-03 11:33:39');
+
 -- --------------------------------------------------------
 
 --
@@ -660,6 +666,13 @@ CREATE TABLE `coupon_usages` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `coupon_usages`
+--
+
+INSERT INTO `coupon_usages` (`id`, `user_id`, `coupon_id`, `created_at`, `updated_at`) VALUES
+(1, 5, 1, '2019-07-03 11:40:23', '2019-07-03 11:40:23');
 
 -- --------------------------------------------------------
 
@@ -683,7 +696,7 @@ CREATE TABLE `currencies` (
 --
 
 INSERT INTO `currencies` (`id`, `name`, `symbol`, `exchange_rate`, `status`, `code`, `created_at`, `updated_at`) VALUES
-(1, 'U.S. Dollar', '$', 1.00000, 1, 'USD', '2018-10-09 11:35:08', '2018-10-17 05:50:52'),
+(1, 'Saudi Arabia Riyal', 'SAR ', 1.00000, 1, 'USD', '2018-10-09 11:35:08', '2018-10-17 05:50:52'),
 (2, 'Australian Dollar', '$', 1.28000, 1, 'AUD', '2018-10-09 11:35:08', '2019-02-04 05:51:55'),
 (5, 'Brazilian Real', 'R$', 3.25000, 1, 'BRL', '2018-10-09 11:35:08', '2018-10-17 05:51:00'),
 (6, 'Canadian Dollar', '$', 1.27000, 1, 'CAD', '2018-10-09 11:35:08', '2018-10-09 11:35:08'),
@@ -726,8 +739,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 5, '2019-07-06 12:36:16', '2019-07-06 12:36:16'),
-(2, 6, '2019-07-10 10:57:18', '2019-07-10 10:57:18');
+(1, 5, '2019-07-02 13:29:45', '2019-07-02 13:29:45');
 
 -- --------------------------------------------------------
 
@@ -750,7 +762,7 @@ CREATE TABLE `flash_deals` (
 --
 
 INSERT INTO `flash_deals` (`id`, `title`, `start_date`, `end_date`, `status`, `created_at`, `updated_at`) VALUES
-(3, 'Eiff', 1552521600, 1553385600, 0, '2019-03-13 23:59:03', '2019-04-13 06:47:43');
+(4, 'Hot discount', 1564876800, 1564876800, 1, '2019-07-03 15:28:49', '2019-07-03 15:28:52');
 
 -- --------------------------------------------------------
 
@@ -773,8 +785,7 @@ CREATE TABLE `flash_deal_products` (
 --
 
 INSERT INTO `flash_deal_products` (`id`, `flash_deal_id`, `product_id`, `discount`, `discount_type`, `created_at`, `updated_at`) VALUES
-(7, 3, 1, 2.00, 'amount', '2019-03-13 23:59:03', '2019-03-13 23:59:03'),
-(8, 3, 6, 2.00, 'amount', '2019-03-13 23:59:03', '2019-03-13 23:59:03');
+(9, 4, 13, 10.00, 'percent', '2019-07-03 15:28:49', '2019-07-03 15:28:49');
 
 -- --------------------------------------------------------
 
@@ -809,7 +820,7 @@ CREATE TABLE `general_settings` (
 --
 
 INSERT INTO `general_settings` (`id`, `frontend_color`, `logo`, `admin_logo`, `admin_login_background`, `admin_login_sidebar`, `favicon`, `site_name`, `address`, `description`, `phone`, `email`, `facebook`, `instagram`, `twitter`, `youtube`, `google_plus`, `created_at`, `updated_at`) VALUES
-(1, 'default', 'uploads/logo/pfdIuiMeXGkDAIpPEUrvUCbQrOHu484nbGfz77zB.png', 'uploads/admin_logo/wCgHrz0Q5QoL1yu4vdrNnQIr4uGuNL48CXfcxOuS.png', NULL, NULL, 'uploads/favicon/uHdGidSaRVzvPgDj6JFtntMqzJkwDk9659233jrb.png', 'Active Ecommerce CMS', 'Demo Address', 'Active eCommerce CMS is a Multi vendor system is such a platform to build a border less marketplace.', '1234567890', 'admin@example.com', 'https://www.facebook.com', 'https://www.instagram.com', 'https://www.twitter.com', 'https://www.youtube.com', 'https://www.googleplus.com', '2019-03-13 08:01:06', '2019-03-13 02:01:06');
+(1, '4', 'uploads/logo/xRBmxAYaPUagGA6OO5ySgoFz6YlJALb4OOGBoJcM.png', 'uploads/admin_logo/wCgHrz0Q5QoL1yu4vdrNnQIr4uGuNL48CXfcxOuS.png', NULL, NULL, 'uploads/favicon/uHdGidSaRVzvPgDj6JFtntMqzJkwDk9659233jrb.png', 'Shathry', 'Demo Address', 'Shathry', '1234567890', 'admin@example.com', 'https://www.facebook.com', 'https://www.instagram.com', 'https://www.twitter.com', 'https://www.youtube.com', 'https://www.googleplus.com', '2019-07-03 20:17:50', '2019-07-03 18:17:50');
 
 -- --------------------------------------------------------
 
@@ -825,14 +836,6 @@ CREATE TABLE `home_categories` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `home_categories`
---
-
-INSERT INTO `home_categories` (`id`, `category_id`, `subsubcategories`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, '[\"1\"]', 1, '2019-03-12 06:38:23', '2019-03-12 06:38:23'),
-(2, 2, '[\"10\"]', 1, '2019-03-12 06:44:54', '2019-03-12 06:44:54');
 
 -- --------------------------------------------------------
 
@@ -855,7 +858,6 @@ CREATE TABLE `languages` (
 
 INSERT INTO `languages` (`id`, `name`, `code`, `rtl`, `created_at`, `updated_at`) VALUES
 (1, 'English', 'en', 0, '2019-01-20 12:13:20', '2019-01-20 12:13:20'),
-(3, 'Bangla', 'bd', 0, '2019-02-17 06:35:37', '2019-02-18 06:49:51'),
 (4, 'Arabic', 'sa', 1, '2019-04-28 18:34:12', '2019-04-28 18:34:12');
 
 -- --------------------------------------------------------
@@ -920,28 +922,34 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `guest_id`, `shipping_address`, `payment_type`, `payment_status`, `payment_details`, `grand_total`, `coupon_discount`, `code`, `date`, `viewed`, `created_at`, `updated_at`) VALUES
-(1, NULL, 718230, '{\"name\":\"Alston\",\"email\":\"mehedi.iitdu@gmail.com\",\"address\":\"House 86, Lake Drive Road, Sector 7, Uttara, Ex sint ut assumenda\",\"country\":\"Bangladesh\",\"city\":\"Dhaka\",\"postal_code\":\"1230\",\"phone\":\"1642954885\",\"checkout_type\":\"guest\"}', 'cash_on_delivery', 'unpaid', NULL, 50.00, 0.00, '20190411-094732', 1554940800, 0, '2019-04-11 03:47:32', '2019-04-11 03:47:32'),
-(2, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"2343252\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 80.00, 0.00, '20190706-021003', 1562422203, 0, '2019-07-06 12:10:03', '2019-07-06 12:10:03'),
-(3, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"2343252\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 80.00, 0.00, '20190706-021327', 1562422407, 0, '2019-07-06 12:13:27', '2019-07-06 12:13:27'),
-(4, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"2343252\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 80.00, 0.00, '20190706-021347', 1562422427, 0, '2019-07-06 12:13:47', '2019-07-06 12:13:47'),
-(5, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"2343252\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 80.00, 0.00, '20190706-021409', 1562422449, 0, '2019-07-06 12:14:09', '2019-07-06 12:14:10'),
-(6, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"2343252\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 80.00, 0.00, '20190706-021418', 1562422458, 0, '2019-07-06 12:14:18', '2019-07-06 12:14:18'),
-(7, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"2343252\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 80.00, 0.00, '20190706-021426', 1562422466, 0, '2019-07-06 12:14:26', '2019-07-06 12:14:26'),
-(8, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"2343252\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 80.00, 0.00, '20190706-021442', 1562422482, 0, '2019-07-06 12:14:42', '2019-07-06 12:14:42'),
-(9, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"2343252\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 80.00, 0.00, '20190706-021734', 1562422654, 0, '2019-07-06 12:17:34', '2019-07-06 12:17:34'),
-(10, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"2343252\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 80.00, 0.00, '20190706-022354', 1562423034, 0, '2019-07-06 12:23:54', '2019-07-06 12:23:54'),
-(11, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 50.00, 0.00, '20190706-023009', 1562423409, 0, '2019-07-06 12:30:09', '2019-07-06 12:30:09'),
-(12, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 50.00, 0.00, '20190706-023049', 1562423449, 0, '2019-07-06 12:30:49', '2019-07-06 12:30:49'),
-(13, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 50.00, 0.00, '20190706-023153', 1562423513, 0, '2019-07-06 12:31:53', '2019-07-06 12:31:53'),
-(14, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 50.00, 0.00, '20190706-023336', 1562423616, 0, '2019-07-06 12:33:36', '2019-07-06 12:33:36'),
-(15, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 50.00, 0.00, '20190706-023346', 1562423626, 0, '2019-07-06 12:33:46', '2019-07-06 12:33:46'),
-(16, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 50.00, 0.00, '20190706-023423', 1562423663, 0, '2019-07-06 12:34:23', '2019-07-06 12:34:23'),
-(17, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 50.00, 0.00, '20190706-023438', 1562423678, 0, '2019-07-06 12:34:38', '2019-07-06 12:34:38'),
-(18, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 50.00, 0.00, '20190706-023444', 1562423684, 0, '2019-07-06 12:34:44', '2019-07-06 12:34:44'),
-(19, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 50.00, 0.00, '20190706-023526', 1562423726, 0, '2019-07-06 12:35:26', '2019-07-06 12:35:26'),
-(20, 5, NULL, '{\"name\":\"kareem\",\"email\":\"kareem@krito.io\",\"address\":\"egypt, 11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"021345646546\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 90.00, 0.00, '20190706-023659', 1562423819, 0, '2019-07-06 12:36:59', '2019-07-06 12:36:59'),
-(21, 5, NULL, '{\"name\":\"kareem\",\"email\":\"kareem@krito.io\",\"address\":\"egypt, 11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"021345646546\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 0.00, 0.00, '20190706-024225', 1562424145, 0, '2019-07-06 12:42:25', '2019-07-06 12:42:25'),
-(22, 4, NULL, '{\"name\":\"admin\",\"email\":\"admin@mail.com\",\"address\":\"Demo address\",\"country\":\"United States\",\"city\":\"Demo city\",\"postal_code\":\"1234\",\"phone\":\"434525\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 43.00, 0.00, '20190710-103408', 1562754848, 0, '2019-07-10 08:34:08', '2019-07-10 08:34:08');
+(1, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 2099.00, 0.00, '20190717-105042', 1563360642, 0, '2019-07-17 08:50:42', '2019-07-17 08:50:43'),
+(2, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 2099.00, 0.00, '20190717-105046', 1563360646, 0, '2019-07-17 08:50:46', '2019-07-17 08:50:46'),
+(3, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 2008.03, 0.00, '20190717-105735', 1563361055, 0, '2019-07-17 08:57:35', '2019-07-17 08:57:36'),
+(4, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 1275.00, 0.00, '20190717-105907', 1563361147, 0, '2019-07-17 08:59:07', '2019-07-17 08:59:08'),
+(5, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'wallet', 'paid', NULL, 4107.03, 0.00, '20190718-024928', 1563461368, 0, '2019-07-18 12:49:28', '2019-07-18 12:49:46'),
+(6, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'wallet', 'paid', NULL, 2281.00, 0.00, '20190718-025510', 1563461710, 0, '2019-07-18 12:55:10', '2019-07-18 12:55:16'),
+(7, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 1275.00, 0.00, '20190718-025934', 1563461974, 0, '2019-07-18 12:59:34', '2019-07-18 12:59:34'),
+(8, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', NULL, 'unpaid', NULL, 2008.03, 0.00, '20190718-030610', 1563462370, 0, '2019-07-18 13:06:10', '2019-07-18 13:06:11'),
+(9, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 2008.03, 0.00, '20190718-030716', 1563462436, 0, '2019-07-18 13:07:16', '2019-07-18 13:07:16'),
+(10, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'cash_on_delivery', 'unpaid', NULL, 0.00, 0.00, '20190718-030758', 1563462478, 0, '2019-07-18 13:07:58', '2019-07-18 13:07:58'),
+(11, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-031430', 1563462870, 0, '2019-07-18 13:14:30', '2019-07-18 13:14:30'),
+(12, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-031511', 1563462911, 0, '2019-07-18 13:15:11', '2019-07-18 13:15:11'),
+(13, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-031938', 1563463178, 0, '2019-07-18 13:19:38', '2019-07-18 13:19:38'),
+(14, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-032236', 1563463356, 0, '2019-07-18 13:22:36', '2019-07-18 13:22:36'),
+(15, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-032346', 1563463426, 0, '2019-07-18 13:23:46', '2019-07-18 13:23:46'),
+(16, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-032426', 1563463466, 0, '2019-07-18 13:24:26', '2019-07-18 13:24:26'),
+(17, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-032452', 1563463492, 0, '2019-07-18 13:24:52', '2019-07-18 13:24:52'),
+(18, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-032519', 1563463519, 0, '2019-07-18 13:25:19', '2019-07-18 13:25:19'),
+(19, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-032542', 1563463542, 0, '2019-07-18 13:25:42', '2019-07-18 13:25:42'),
+(20, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-032612', 1563463572, 0, '2019-07-18 13:26:12', '2019-07-18 13:26:12'),
+(21, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-032634', 1563463594, 0, '2019-07-18 13:26:34', '2019-07-18 13:26:34'),
+(22, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-032654', 1563463614, 0, '2019-07-18 13:26:54', '2019-07-18 13:26:55'),
+(23, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-032716', 1563463636, 0, '2019-07-18 13:27:16', '2019-07-18 13:27:16'),
+(24, 5, NULL, '{\"name\":\"kareem io\",\"email\":\"kareem@krito.io\",\"address\":\"egypt11 zakria osman\",\"country\":\"Egypt\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"0123456789\",\"checkout_type\":\"logged\"}', 'paypal', 'unpaid', NULL, 2099.00, 0.00, '20190718-032737', 1563463657, 0, '2019-07-18 13:27:37', '2019-07-18 13:27:37'),
+(25, NULL, 706964, '{\"name\":\"amal\",\"email\":\"amal@yahoo.com\",\"address\":\"\\u0634\\u0627\\u0631\\u0639 \\u0645\\u0635\\u0631\",\"country\":\"Antigua and Barbuda\",\"city\":\"cairo\",\"postal_code\":\"002\",\"phone\":\"654321\",\"checkout_type\":\"guest\"}', 'cash_on_delivery', 'unpaid', NULL, 8032.12, 0.00, '20190720-102226', 1563618146, 0, '2019-07-20 08:22:26', '2019-07-20 08:22:27'),
+(26, NULL, 809363, '{\"name\":\"amal\",\"email\":\"amal@yahoo.com\",\"address\":\"\\u0634\\u0627\\u0631\\u0639 \\u0645\\u0635\\u0631\",\"country\":\"Afghanistan\",\"city\":\"gg\",\"postal_code\":\"002\",\"phone\":\"4567899\",\"checkout_type\":\"guest\"}', NULL, 'unpaid', NULL, 6297.00, 0.00, '20190721-121022', 1563711022, 0, '2019-07-21 10:10:22', '2019-07-21 10:10:23'),
+(27, NULL, 895316, '{\"name\":\"amal\",\"email\":\"amal@yahoo.com\",\"address\":\"\\u0634\\u0627\\u0631\\u0639 \\u0645\\u0635\\u0631\",\"country\":\"Afghanistan\",\"city\":\"ad\",\"postal_code\":\"002\",\"phone\":\"4567899\",\"checkout_type\":\"guest\"}', 'cash_on_delivery', 'unpaid', NULL, 2099.00, 0.00, '20190721-121034', 1563711034, 0, '2019-07-21 10:10:34', '2019-07-21 10:10:34'),
+(28, NULL, 412367, '{\"name\":\"amal\",\"email\":\"amal@yahoo.com\",\"address\":\"\\u0634\\u0627\\u0631\\u0639 \\u0645\\u0635\\u0631\",\"country\":\"Afghanistan\",\"city\":\"gg\",\"postal_code\":\"002\",\"phone\":\"4567899\",\"checkout_type\":\"guest\"}', 'cash_on_delivery', 'unpaid', NULL, 6297.00, 0.00, '20190721-121045', 1563711045, 0, '2019-07-21 10:10:45', '2019-07-21 10:10:46');
 
 -- --------------------------------------------------------
 
@@ -970,28 +978,40 @@ CREATE TABLE `order_details` (
 --
 
 INSERT INTO `order_details` (`id`, `order_id`, `seller_id`, `product_id`, `variation`, `price`, `tax`, `shipping_cost`, `quantity`, `payment_status`, `delivery_status`, `created_at`, `updated_at`) VALUES
-(1, 1, 3, 5, '34', 50.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-04-11 03:47:32', '2019-04-11 03:47:32'),
-(2, 1, 3, 5, '34', 50.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-05-12 09:35:24', '2019-05-12 09:35:24'),
-(3, 2, 3, 6, '36', 80.00, 0.00, 0.00, 2, 'unpaid', 'pending', '2019-07-06 12:10:03', '2019-07-06 12:10:03'),
-(4, 3, 3, 6, '36', 80.00, 0.00, 0.00, 2, 'unpaid', 'pending', '2019-07-06 12:13:27', '2019-07-06 12:13:27'),
-(5, 4, 3, 6, '36', 80.00, 0.00, 0.00, 2, 'unpaid', 'pending', '2019-07-06 12:13:47', '2019-07-06 12:13:47'),
-(6, 5, 3, 6, '36', 80.00, 0.00, 0.00, 2, 'unpaid', 'pending', '2019-07-06 12:14:09', '2019-07-06 12:14:09'),
-(7, 6, 3, 6, '36', 80.00, 0.00, 0.00, 2, 'unpaid', 'pending', '2019-07-06 12:14:18', '2019-07-06 12:14:18'),
-(8, 7, 3, 6, '36', 80.00, 0.00, 0.00, 2, 'unpaid', 'pending', '2019-07-06 12:14:26', '2019-07-06 12:14:26'),
-(9, 8, 3, 6, '36', 80.00, 0.00, 0.00, 2, 'unpaid', 'pending', '2019-07-06 12:14:42', '2019-07-06 12:14:42'),
-(10, 9, 3, 6, '36', 80.00, 0.00, 0.00, 2, 'unpaid', 'pending', '2019-07-06 12:17:34', '2019-07-06 12:17:34'),
-(11, 10, 3, 6, '36', 80.00, 0.00, 0.00, 2, 'unpaid', 'pending', '2019-07-06 12:23:54', '2019-07-06 12:23:54'),
-(12, 11, 3, 7, '34', 50.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-06 12:30:09', '2019-07-06 12:30:09'),
-(13, 12, 3, 7, '34', 50.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-06 12:30:49', '2019-07-06 12:30:49'),
-(14, 13, 3, 7, '34', 50.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-06 12:31:53', '2019-07-06 12:31:53'),
-(15, 14, 3, 7, '34', 50.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-06 12:33:36', '2019-07-06 12:33:36'),
-(16, 15, 3, 7, '34', 50.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-06 12:33:46', '2019-07-06 12:33:46'),
-(17, 16, 3, 7, '34', 50.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-06 12:34:23', '2019-07-06 12:34:23'),
-(18, 17, 3, 7, '34', 50.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-06 12:34:38', '2019-07-06 12:34:38'),
-(19, 18, 3, 7, '34', 50.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-06 12:34:44', '2019-07-06 12:34:44'),
-(20, 19, 3, 7, '34', 50.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-06 12:35:26', '2019-07-06 12:35:26'),
-(21, 20, 3, 8, '36', 90.00, 0.00, 0.00, 2, 'unpaid', 'pending', '2019-07-06 12:36:59', '2019-07-06 12:36:59'),
-(22, 22, 3, 8, '32', 43.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-10 08:34:08', '2019-07-10 08:34:08');
+(1, 1, 4, 3, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-17 08:50:43', '2019-07-17 08:50:43'),
+(2, 2, 4, 3, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-17 08:50:46', '2019-07-17 08:50:46'),
+(3, 3, 4, 4, 'Black-1.5-HOT', 2008.03, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-17 08:57:35', '2019-07-17 08:57:35'),
+(4, 4, 4, 15, 'White-HFK08U6-FraserVerticalhas8.8feet', 1275.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-17 08:59:08', '2019-07-17 08:59:08'),
+(5, 5, 4, 14, 'Black-2-hotandcold', 2008.03, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 12:49:28', '2019-07-18 12:49:28'),
+(6, 5, 4, 3, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 12:49:28', '2019-07-18 12:49:28'),
+(7, 6, 4, 16, 'CadetBlue', 182.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 12:55:10', '2019-07-18 12:55:10'),
+(8, 6, 4, 3, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 12:55:10', '2019-07-18 12:55:10'),
+(9, 7, 4, 15, 'White-HFK08U6-FraserVerticalhas8.8feet', 1275.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 12:59:34', '2019-07-18 12:59:34'),
+(10, 8, 4, 14, 'Black-1.5-HOT', 2008.03, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:06:11', '2019-07-18 13:06:11'),
+(11, 9, 4, 14, 'Black-1.5-HOT', 2008.03, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:07:16', '2019-07-18 13:07:16'),
+(12, 11, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:14:30', '2019-07-18 13:14:30'),
+(13, 12, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:15:11', '2019-07-18 13:15:11'),
+(14, 13, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:19:38', '2019-07-18 13:19:38'),
+(15, 14, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:22:36', '2019-07-18 13:22:36'),
+(16, 15, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:23:46', '2019-07-18 13:23:46'),
+(17, 16, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:24:26', '2019-07-18 13:24:26'),
+(18, 17, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:24:52', '2019-07-18 13:24:52'),
+(19, 18, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:25:19', '2019-07-18 13:25:19'),
+(20, 19, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:25:42', '2019-07-18 13:25:42'),
+(21, 20, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:26:12', '2019-07-18 13:26:12'),
+(22, 21, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:26:34', '2019-07-18 13:26:34'),
+(23, 22, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:26:55', '2019-07-18 13:26:55'),
+(24, 23, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:27:16', '2019-07-18 13:27:16'),
+(25, 24, 4, 17, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-18 13:27:37', '2019-07-18 13:27:37'),
+(26, 25, 4, 4, 'Black-1.5-HOT', 2008.03, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-20 08:22:26', '2019-07-20 08:22:26'),
+(27, 25, 4, 14, 'Black-1.5-HOT', 2008.03, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-20 08:22:27', '2019-07-20 08:22:27'),
+(28, 25, 4, 4, 'Black-2-hotandcold', 2008.03, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-20 08:22:27', '2019-07-20 08:22:27'),
+(29, 25, 4, 4, 'Black-1.5-HOT', 2008.03, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-20 08:22:27', '2019-07-20 08:22:27'),
+(30, 26, 4, 3, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-21 10:10:22', '2019-07-21 10:10:22'),
+(31, 26, 4, 3, 'White-130032770011006-C6600', 4198.00, 0.00, 0.00, 2, 'unpaid', 'pending', '2019-07-21 10:10:23', '2019-07-21 10:10:23'),
+(32, 27, 4, 3, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-21 10:10:34', '2019-07-21 10:10:34'),
+(33, 28, 4, 3, 'White-130032770011006-C6600', 2099.00, 0.00, 0.00, 1, 'unpaid', 'pending', '2019-07-21 10:10:45', '2019-07-21 10:10:45'),
+(34, 28, 4, 3, 'White-130032770011006-C6600', 4198.00, 0.00, 0.00, 2, 'unpaid', 'pending', '2019-07-21 10:10:45', '2019-07-21 10:10:45');
 
 -- --------------------------------------------------------
 
@@ -1103,18 +1123,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `added_by`, `user_id`, `category_id`, `subcategory_id`, `subsubcategory_id`, `brand_id`, `photos`, `thumbnail_img`, `featured_img`, `flash_deal_img`, `video_provider`, `video_link`, `tags`, `description`, `unit_price`, `purchase_price`, `choice_options`, `colors`, `variations`, `todays_deal`, `published`, `featured`, `current_stock`, `unit`, `discount`, `discount_type`, `tax`, `tax_type`, `shipping_type`, `shipping_cost`, `num_of_sale`, `meta_title`, `meta_description`, `meta_img`, `pdf`, `slug`, `rating`, `created_at`, `updated_at`) VALUES
-(1, 'Demo product', 'seller', 3, 1, 1, 1, 1, 'uploads/products/featured/product-8.jpg', 'uploads/products/thumbnail/Product-thumbnail-image.jpg', 'uploads/products/featured/Product-thumbnail-image.jpg', 'uploads/products/flash_deal/flash-deal-image.jpg', 'youtube', NULL, 'demo,product', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum ab sed! Laudantium quas tempore vitae quis neque provident delectus aspernatur enim distinctio ipsam possimus esse, architecto repellat perspiciatis quia deserunt laborum sapiente quos itaque quo debitis? Repellendus, ab possimus.', 20.00, 8.00, '[]', '[\"#9966CC\",\"#00FFFF\",\"#00FFFF\"]', '{\"Amethyst\":{\"price\":null,\"sku\":null,\"qty\":null},\"Aqua\":{\"price\":null,\"sku\":null,\"qty\":null}}', 1, 1, 1, 0, 'pc', 2.00, 'percent', 2.00, 'amount', 'flat_rate', 10.00, 0, 'Demo product', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'uploads/products/meta/nOThz3HPq8sKoHwLvgsvCv2JTIHAmtKgQvWRSLoN.jpeg', NULL, 'Demo-product-UoIp8', 0.00, '2019-03-12 06:37:56', '2019-03-13 01:49:20'),
-(2, 'Demo product', 'seller', 3, 1, 1, 1, 1, 'uploads/products/featured/product-9.jpg', 'uploads/products/thumbnail/Product-thumbnail-image.jpg', 'uploads/products/featured/Product-thumbnail-image.jpg', 'uploads/products/flash_deal/flash-deal-image.jpg', 'youtube', NULL, 'demo,product', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum ab sed! Laudantium quas tempore vitae quis neque provident delectus aspernatur enim distinctio ipsam possimus esse, architecto repellat perspiciatis quia deserunt laborum sapiente quos itaque quo debitis? Repellendus, ab possimus.', 20.00, 8.00, '[]', '[\"#9966CC\",\"#00FFFF\",\"#00FFFF\"]', '{\"Amethyst\":{\"price\":null,\"sku\":null,\"qty\":null},\"Aqua\":{\"price\":null,\"sku\":null,\"qty\":null}}', 1, 1, 1, 0, 'pc', 2.00, 'percent', 2.00, 'amount', 'flat_rate', 10.00, 0, 'Demo product', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'uploads/products/meta/nOThz3HPq8sKoHwLvgsvCv2JTIHAmtKgQvWRSLoN.jpeg', NULL, 'Demo-product-VCQuv', 0.00, '2019-03-12 06:39:14', '2019-03-13 01:49:20'),
-(3, 'Demo product', 'seller', 3, 1, 1, 1, 1, 'uploads/products/featured/product-8.jpg', 'uploads/products/thumbnail/Product-thumbnail-image.jpg', 'uploads/products/featured/Product-thumbnail-image.jpg', 'uploads/products/flash_deal/flash-deal-image.jpg', 'youtube', NULL, 'demo,product', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum ab sed! Laudantium quas tempore vitae quis neque provident delectus aspernatur enim distinctio ipsam possimus esse, architecto repellat perspiciatis quia deserunt laborum sapiente quos itaque quo debitis? Repellendus, ab possimus.', 20.00, 8.00, '[]', '[\"#9966CC\",\"#00FFFF\",\"#00FFFF\"]', '{\"Amethyst\":{\"price\":null,\"sku\":null,\"qty\":null},\"Aqua\":{\"price\":null,\"sku\":null,\"qty\":null}}', 1, 1, 1, 0, 'pc', 2.00, 'percent', 2.00, 'amount', 'flat_rate', 10.00, 0, 'Demo product', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'uploads/products/meta/nOThz3HPq8sKoHwLvgsvCv2JTIHAmtKgQvWRSLoN.jpeg', NULL, 'Demo-product-O0v1o', 0.00, '2019-03-12 06:39:42', '2019-03-13 01:49:20'),
-(4, 'Demo product', 'seller', 3, 1, 1, 1, 1, 'uploads/products/featured/product-8.jpg', 'uploads/products/thumbnail/Product-thumbnail-image.jpg', 'uploads/products/featured/Product-thumbnail-image.jpg', 'uploads/products/flash_deal/flash-deal-image.jpg', 'youtube', NULL, 'demo,product', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum ab sed! Laudantium quas tempore vitae quis neque provident delectus aspernatur enim distinctio ipsam possimus esse, architecto repellat perspiciatis quia deserunt laborum sapiente quos itaque quo debitis? Repellendus, ab possimus.', 20.00, 8.00, '[]', '[\"#9966CC\",\"#00FFFF\",\"#00FFFF\"]', '{\"Amethyst\":{\"price\":null,\"sku\":null,\"qty\":null},\"Aqua\":{\"price\":null,\"sku\":null,\"qty\":null}}', 1, 1, 1, 0, 'pc', 2.00, 'percent', 2.00, 'amount', 'flat_rate', 10.00, 0, 'Demo product', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'uploads/products/meta/nOThz3HPq8sKoHwLvgsvCv2JTIHAmtKgQvWRSLoN.jpeg', NULL, 'Demo-product-4KaDV', 0.00, '2019-03-12 06:39:44', '2019-03-13 01:49:20'),
-(5, 'Demo seller product', 'seller', 3, 2, 4, 10, 1, 'uploads/products/featured/product-8.jpg', 'uploads/products/thumbnail/Product-thumbnail-image.jpg', 'uploads/products/featured/Product-thumbnail-image.jpg', 'uploads/products/flash_deal/flash-deal-image.jpg', 'youtube', NULL, 'seller,product', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum ab sed! Laudantium quas tempore vitae quis neque provident delectus aspernatur enim distinctio ipsam possimus esse, architecto repellat perspiciatis quia deserunt laborum sapiente quos itaque quo debitis? Repellendus, ab possimus.', 35.00, 15.00, '[{\"name\":\"choice_0\",\"title\":\"Size\",\"options\":[\"32\",\"34\",\"36\"]}]', '[]', '{\"32\":{\"price\":\"38\",\"sku\":\"Dsp-32\",\"qty\":\"10\"},\"34\":{\"price\":\"50\",\"sku\":\"Dsp-34\",\"qty\":19},\"36\":{\"price\":\"40\",\"sku\":\"Dsp-36\",\"qty\":\"30\"}}', 0, 1, 1, 0, 'pc', NULL, '1', 5.00, '1', 'flat_rate', 0.00, 1, 'Demo seller product', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the .', NULL, NULL, 'Demo-seller-product-ADv9n', 0.00, '2019-03-12 06:43:16', '2019-04-11 03:47:32'),
-(6, 'Demo seller product', 'seller', 3, 2, 4, 10, 1, 'uploads/products/featured/product-9.jpg', 'uploads/products/thumbnail/Product-thumbnail-image.jpg', 'uploads/products/featured/Product-thumbnail-image.jpg', 'uploads/products/flash_deal/flash-deal-image.jpg', 'youtube', NULL, 'seller,product', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum ab sed! Laudantium quas tempore vitae quis neque provident delectus aspernatur enim distinctio ipsam possimus esse, architecto repellat perspiciatis quia deserunt laborum sapiente quos itaque quo debitis? Repellendus, ab possimus.', 35.00, 15.00, '[{\"name\":\"choice_0\",\"title\":\"Size\",\"options\":[\"32\",\"34\",\"36\"]}]', '[]', '{\"32\":{\"price\":\"38\",\"sku\":\"Dsp-32\",\"qty\":8},\"34\":{\"price\":\"50\",\"sku\":\"Dsp-34\",\"qty\":\"20\"},\"36\":{\"price\":\"40\",\"sku\":\"Dsp-36\",\"qty\":12}}', 0, 1, 0, 0, 'pc', NULL, '1', 5.00, '1', 'flat_rate', 0.00, 9, 'Demo seller product', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the .', NULL, NULL, 'Demo-seller-product-1jgFa', 0.00, '2019-03-12 06:43:22', '2019-07-06 12:23:54'),
-(7, 'Demo seller product', 'seller', 3, 2, 4, 10, 1, 'uploads/products/featured/product-8.jpg', 'uploads/products/thumbnail/Product-thumbnail-image.jpg', 'uploads/products/featured/Product-thumbnail-image.jpg', 'uploads/products/flash_deal/flash-deal-image.jpg', 'youtube', NULL, 'seller,product', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum ab sed! Laudantium quas tempore vitae quis neque provident delectus aspernatur enim distinctio ipsam possimus esse, architecto repellat perspiciatis quia deserunt laborum sapiente quos itaque quo debitis? Repellendus, ab possimus.', 35.00, 15.00, '[{\"name\":\"choice_0\",\"title\":\"Size\",\"options\":[\"32\",\"34\",\"36\"]}]', '[]', '{\"32\":{\"price\":\"38\",\"sku\":\"Dsp-32\",\"qty\":9},\"34\":{\"price\":\"50\",\"sku\":\"Dsp-34\",\"qty\":9},\"36\":{\"price\":\"40\",\"sku\":\"Dsp-36\",\"qty\":\"30\"}}', 1, 1, 1, 0, 'pc', NULL, '1', 5.00, '1', 'flat_rate', 0.00, 9, 'Demo seller product', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the .', NULL, NULL, 'Demo-seller-product-qeVLn', 0.00, '2019-03-12 06:43:26', '2019-07-06 12:35:26'),
-(8, 'Demo seller product', 'seller', 3, 2, 4, 10, 1, 'uploads/products/featured/product-10.jpg', 'uploads/products/thumbnail/Product-thumbnail-image.jpg', 'uploads/products/featured/Product-thumbnail-image.jpg', 'uploads/products/flash_deal/flash-deal-image.jpg', 'youtube', NULL, 'seller,product', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum ab sed! Laudantium quas tempore vitae quis neque provident delectus aspernatur enim distinctio ipsam possimus esse, architecto repellat perspiciatis quia deserunt laborum sapiente quos itaque quo debitis? Repellendus, ab possimus.', 35.00, 15.00, '[{\"name\":\"choice_0\",\"title\":\"Size\",\"options\":[\"32\",\"34\",\"36\"]}]', '[]', '{\"32\":{\"price\":\"38\",\"sku\":\"Dsp-32\",\"qty\":9},\"34\":{\"price\":\"50\",\"sku\":\"Dsp-34\",\"qty\":\"20\"},\"36\":{\"price\":\"40\",\"sku\":\"Dsp-36\",\"qty\":28}}', 0, 1, 1, 0, 'pc', 0.00, 'amount', 5.00, 'amount', 'flat_rate', 0.00, 2, NULL, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the .', NULL, NULL, 'Demo-seller-product-7k6AA', 0.00, '2019-03-12 06:43:30', '2019-07-10 08:34:08'),
-(9, 'Demo seller product', 'seller', 3, 2, 4, 10, 1, 'uploads/products/featured/product-8.jpg', 'uploads/products/thumbnail/Product-thumbnail-image.jpg', 'uploads/products/featured/Product-thumbnail-image.jpg', 'uploads/products/flash_deal/flash-deal-image.jpg', 'youtube', NULL, 'seller,product', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum ab sed! Laudantium quas tempore vitae quis neque provident delectus aspernatur enim distinctio ipsam possimus esse, architecto repellat perspiciatis quia deserunt laborum sapiente quos itaque quo debitis? Repellendus, ab possimus.', 35.00, 15.00, '[{\"name\":\"choice_0\",\"title\":\"Size\",\"options\":[\"32\",\"34\",\"36\"]}]', '[]', '{\"32\":{\"price\":\"38\",\"sku\":\"Dsp-32\",\"qty\":\"10\"},\"34\":{\"price\":\"50\",\"sku\":\"Dsp-34\",\"qty\":\"20\"},\"36\":{\"price\":\"40\",\"sku\":\"Dsp-36\",\"qty\":\"30\"}}', 0, 1, 1, 0, 'pc', 0.00, 'amount', 5.00, 'amount', 'flat_rate', 0.00, 0, NULL, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the .', NULL, NULL, 'Demo-seller-product-R6KFl', 0.00, '2019-05-26 04:47:11', '2019-05-26 04:47:11'),
-(10, 'Demo seller product', 'seller', 3, 2, 4, 10, 1, 'uploads/products/featured/product-11.jpg', 'uploads/products/thumbnail/Product-thumbnail-image.jpg', 'uploads/products/featured/Product-thumbnail-image.jpg', 'uploads/products/flash_deal/flash-deal-image.jpg', 'youtube', NULL, 'seller,product', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum ab sed! Laudantium quas tempore vitae quis neque provident delectus aspernatur enim distinctio ipsam possimus esse, architecto repellat perspiciatis quia deserunt laborum sapiente quos itaque quo debitis? Repellendus, ab possimus.', 35.00, 15.00, '[{\"name\":\"choice_0\",\"title\":\"Size\",\"options\":[\"32\",\"34\",\"36\"]}]', '[]', '{\"32\":{\"price\":\"38\",\"sku\":\"Dsp-32\",\"qty\":9},\"34\":{\"price\":\"50\",\"sku\":\"Dsp-34\",\"qty\":18},\"36\":{\"price\":\"40\",\"sku\":\"Dsp-36\",\"qty\":\"30\"}}', 1, 1, 1, 0, 'pc', NULL, '1', 5.00, '1', 'flat_rate', 0.00, 0, 'Demo seller product', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the .', NULL, NULL, 'Demo-seller-product-4wobb', 0.00, '2019-05-26 04:47:17', '2019-05-26 04:47:17'),
-(11, 'Demo product', 'seller', 3, 1, 1, 1, 1, 'uploads/products/featured/product-8.jpg', 'uploads/products/thumbnail/Product-thumbnail-image.jpg', 'uploads/products/featured/Product-thumbnail-image.jpg', 'uploads/products/flash_deal/flash-deal-image.jpg', 'youtube', NULL, 'demo,product', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum ab sed! Laudantium quas tempore vitae quis neque provident delectus aspernatur enim distinctio ipsam possimus esse, architecto repellat perspiciatis quia deserunt laborum sapiente quos itaque quo debitis? Repellendus, ab possimus.', 20.00, 8.00, '[]', '[\"#9966CC\",\"#00FFFF\",\"#00FFFF\"]', '{\"Amethyst\":{\"price\":null,\"sku\":null,\"qty\":null},\"Aqua\":{\"price\":null,\"sku\":null,\"qty\":null}}', 1, 1, 1, 0, 'pc', 2.00, 'percent', 2.00, 'amount', 'flat_rate', 10.00, 0, 'Demo product', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'uploads/products/meta/nOThz3HPq8sKoHwLvgsvCv2JTIHAmtKgQvWRSLoN.jpeg', NULL, 'Demo-product-wXoUT', 0.00, '2019-05-26 04:47:48', '2019-05-26 04:47:48'),
-(12, 'Demo product', 'seller', 3, 1, 1, 1, 1, 'uploads/products/featured/product-8.jpg', 'uploads/products/thumbnail/Product-thumbnail-image.jpg', 'uploads/products/featured/Product-thumbnail-image.jpg', 'uploads/products/flash_deal/flash-deal-image.jpg', 'youtube', NULL, 'demo,product', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum harum ab sed! Laudantium quas tempore vitae quis neque provident delectus aspernatur enim distinctio ipsam possimus esse, architecto repellat perspiciatis quia deserunt laborum sapiente quos itaque quo debitis? Repellendus, ab possimus.', 20.00, 8.00, '[]', '[\"#9966CC\",\"#00FFFF\",\"#00FFFF\"]', '{\"Amethyst\":{\"price\":null,\"sku\":null,\"qty\":null},\"Aqua\":{\"price\":null,\"sku\":null,\"qty\":null}}', 1, 1, 1, 0, 'pc', 2.00, 'percent', 2.00, 'amount', 'flat_rate', 10.00, 0, 'Demo product', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'uploads/products/meta/nOThz3HPq8sKoHwLvgsvCv2JTIHAmtKgQvWRSLoN.jpeg', NULL, 'Demo-product-41zHs', 0.00, '2019-05-26 04:47:57', '2019-05-26 04:47:57');
+(3, 'Fraser Land-Escape 20.2 feet', 'admin', 4, 3, 10, 18, 3, 'uploads\\/products\\/photos\\/18gHJy7I5nmHwaqUvYt73i21XZ4r4pnQCBFVJ6Hn.jpeg', 'uploads/products/thumbnail/VK5vulm4eOwvVXT0UmWNC2Dn36V8opMklOoTRHQ7.jpeg', 'uploads/products/featured/q4AAFoAUiE7O2ZF16C1xzqf2FrgDpNUklokBu967.jpeg', 'uploads/products/flash_deal/CTf5BoM9zdTD0SQrqxzS1ijrb7kkucVDT5PmXrhn.jpeg', 'youtube', NULL, 'Fraser', 'Surface Freezer 600l Rated power consumption-F-manual temperature control noise rate 41 3 basket, cleaning tool, food divider', 2099.00, 2099.00, '[{\"name\":\"choice_0\",\"title\":\"SKU\",\"options\":[\"130032770011006\"]},{\"name\":\"choice_1\",\"title\":\"Model\",\"options\":[\"C6600\"]}]', '[\"#FFFFFF\"]', '{\"White-130032770011006-C6600\":{\"price\":\"2099.00\",\"sku\":\"FL2f-White-130032770011006-C6600\",\"qty\":189}}', 1, 1, 1, 0, 'SAR', 0.00, 'amount', 0.00, 'amount', 'free', 0.00, 9, 'Simfer', 'Be the first to review this product', 'uploads/products/meta/fRiY7pNAZX5Ycgo9cFSrbAXOjYXVnWOGdzNrcC5T.jpeg', NULL, 'Fraser-Land-Escape-202-feet-RKuCL', 0.00, '2019-07-03 18:02:46', '2019-07-21 10:10:46'),
+(4, 'مكيف شباك جري 18000 وحدة بارد فقط', 'admin', 4, 3, 10, 18, 3, 'uploads/products/featured/product-8.jpg', 'uploads/products/thumbnail/xMRNaN6QwkJi3pnQ2Lv4IUIMEMHJQUqWOL6xybQY.jpeg', 'uploads/products/featured/OZPu7V5gKFoOIrkTNV8VnZTLpra8sgysdAgYgACn.jpeg', 'uploads/products/flash_deal/BXzUAesufOTy3to9OfuWzzvzN9HzUo3cxr39a6mx.png', 'youtube', NULL, 'GREE', '<strong>مكيف شباك جري 18000 وحدة بارد فقط</strong>', 2000.00, 2500.00, '[{\"name\":\"choice_0\",\"title\":\"Model\",\"options\":[\"1.5 \",\"2\"]},{\"name\":\"choice_1\",\"title\":\"Description\",\"options\":[\"HOT \",\"hot and cold\"]}]', '[\"#000000\"]', '{\"Black-1.5-HOT\":{\"price\":\"2000.03\",\"sku\":\"001\",\"qty\":11},\"Black-1.5-hotandcold\":{\"price\":\"2000.05\",\"sku\":\"002\",\"qty\":\"15\"},\"Black-2-HOT\":{\"price\":\"2000\",\"sku\":\"003\",\"qty\":\"19\"},\"Black-2-hotandcold\":{\"price\":\"2000.03\",\"sku\":\"004\",\"qty\":15}}', 1, 1, 1, 0, 'SAR', 2.00, 'amount', 10.00, 'amount', 'free', 0.00, 4, 'مكيف شباك جري 18000 وحدة بارد فقط', 'مكيف شباك جري 18000 وحدة بارد فقط', 'uploads/products/meta/rEEgiO3xVUpo1LB3CrFN8qbDe3vVMhz2XrqOyuUS.jpeg', NULL, '---18000----9v6PB', 0.00, '2019-07-03 17:50:12', '2019-07-20 08:22:27'),
+(14, 'مكيف شباك جري 18000 وحدة بارد فقط', 'admin', 4, 3, 10, 18, 3, 'uploads/products/featured/product-8.jpg', 'uploads/products/thumbnail/xMRNaN6QwkJi3pnQ2Lv4IUIMEMHJQUqWOL6xybQY.jpeg', 'uploads/products/featured/OZPu7V5gKFoOIrkTNV8VnZTLpra8sgysdAgYgACn.jpeg', 'uploads/products/flash_deal/BXzUAesufOTy3to9OfuWzzvzN9HzUo3cxr39a6mx.png', 'youtube', NULL, 'GREE', '<strong>مكيف شباك جري 18000 وحدة بارد فقط</strong>', 2000.00, 2500.00, '[{\"name\":\"choice_0\",\"title\":\"Model\",\"options\":[\"1.5 \",\"2\"]},{\"name\":\"choice_1\",\"title\":\"Description\",\"options\":[\"HOT \",\"hot and cold\"]}]', '[\"#000000\"]', '{\"Black-1.5-HOT\":{\"price\":\"2000.03\",\"sku\":\"001\",\"qty\":11},\"Black-1.5-hotandcold\":{\"price\":\"2000.05\",\"sku\":\"002\",\"qty\":\"15\"},\"Black-2-HOT\":{\"price\":\"2000\",\"sku\":\"003\",\"qty\":\"19\"},\"Black-2-hotandcold\":{\"price\":\"2000.03\",\"sku\":\"004\",\"qty\":15}}', 1, 1, 1, 0, 'SAR', 2.00, 'amount', 10.00, 'amount', 'free', 0.00, 4, 'مكيف شباك جري 18000 وحدة بارد فقط', 'مكيف شباك جري 18000 وحدة بارد فقط', 'uploads/products/meta/rEEgiO3xVUpo1LB3CrFN8qbDe3vVMhz2XrqOyuUS.jpeg', NULL, '---18000----9v6PB', 0.00, '2019-07-03 17:50:12', '2019-07-20 08:22:27'),
+(15, 'Fraser Vertical has 8.8 feet', 'admin', 4, 3, 10, 18, 3, 'uploads\\/products\\/photos\\/bZWWrQuCuA2M2BLmJmPr6ISClAGjyFpjWwztld7d.jpeg', 'uploads/products/thumbnail/UBP5rWhAv3Vsy6NljBGHrE0YTrFAYQSgIZUbNsu3.jpeg', 'uploads/products/featured/zX6W4jlFuRxsg4yvoJ6n119t81TWMhCcnI36wH1K.jpeg', 'uploads/products/flash_deal/WcfIUPGw7fAgeFMuoiBqVfHYkZSMq89kpcVRvFHt.jpeg', 'youtube', NULL, 'Haas', 'Be the first to review this product', 1275.00, 1275.00, '[{\"name\":\"choice_0\",\"title\":\"Model\",\"options\":[\"HFK08U6\"]},{\"name\":\"choice_1\",\"title\":\"SKU\",\"options\":[\"Fraser Vertical has 8.8 feet\"]}]', '[\"#FFFFFF\"]', '{\"White-HFK08U6-FraserVerticalhas8.8feet\":{\"price\":\"1275.00\",\"sku\":\"FVh8f-White-HFK08U6-FraserVerticalhas8.8feet\",\"qty\":218}}', 1, 1, 1, 0, 'SAR', 0.00, 'amount', 0.00, 'amount', 'free', 0.00, 2, 'Haas', 'Be the first to review this product', 'uploads/products/meta/jqKPYZ7UuKJsIT8IAmUFGssqC9v1lGDdQyP80wiG.jpeg', NULL, 'Fraser-Vertical-has-88-feet-jknKz', 0.00, '2019-07-03 17:54:14', '2019-07-18 12:59:34'),
+(16, 'بلت ان سطح غاز كاندي 5عين', 'admin', 4, 3, 10, 18, 3, 'uploads\\/products\\/photos\\/stsBzzGkTFawzxcoQxdetRE0krWZhX2m57Qt1nAW.jpeg', 'uploads/products/thumbnail/u5UNj2cGIrMW8jBb8Qlq3JbTKzWTYb4EZHTIlh1W.jpeg', 'uploads/products/featured/yBFl4XBOsseHKcmncH92nj3926J73afppC5ix1VQ.jpeg', 'uploads/products/flash_deal/TclRwhcLwsIIksKhQhqpXzn7kVNoFzsjWNnKDhHp.jpeg', 'youtube', NULL, 'SE', '<strong>بلت ان سطح غاز كاندي 5عين</strong>', 250.00, 300.00, '[]', '[\"#5F9EA0\"]', '{\"CadetBlue\":{\"price\":\"250\",\"sku\":\"487\",\"qty\":10}}', 1, 1, 1, 0, 'SAR', 78.00, 'amount', 10.00, 'amount', 'free', 0.00, 2, 'بلت ان سطح غاز كاندي 5عين', 'بلت ان سطح غاز كاندي 5عين', 'uploads/products/meta/v1qnAkE1xj8vbnPOrKne1akQIRk453GAa71UVqjA.jpeg', NULL, '-----5-IKo3L', 0.00, '2019-07-03 17:58:39', '2019-07-18 12:55:10'),
+(17, 'Fraser Land-Escape 20.2 feet', 'admin', 4, 3, 10, 18, 3, 'uploads\\/products\\/photos\\/18gHJy7I5nmHwaqUvYt73i21XZ4r4pnQCBFVJ6Hn.jpeg', 'uploads/products/thumbnail/VK5vulm4eOwvVXT0UmWNC2Dn36V8opMklOoTRHQ7.jpeg', 'uploads/products/featured/q4AAFoAUiE7O2ZF16C1xzqf2FrgDpNUklokBu967.jpeg', 'uploads/products/flash_deal/CTf5BoM9zdTD0SQrqxzS1ijrb7kkucVDT5PmXrhn.jpeg', 'youtube', NULL, 'Fraser', 'Surface Freezer 600l Rated power consumption-F-manual temperature control noise rate 41 3 basket, cleaning tool, food divider', 2099.00, 2099.00, '[{\"name\":\"choice_0\",\"title\":\"SKU\",\"options\":[\"130032770011006\"]},{\"name\":\"choice_1\",\"title\":\"Model\",\"options\":[\"C6600\"]}]', '[\"#FFFFFF\"]', '{\"White-130032770011006-C6600\":{\"price\":\"2099.00\",\"sku\":\"FL2f-White-130032770011006-C6600\",\"qty\":186}}', 1, 1, 1, 0, 'SAR', 0.00, 'amount', 0.00, 'amount', 'free', 0.00, 14, 'Simfer', 'Be the first to review this product', 'uploads/products/meta/fRiY7pNAZX5Ycgo9cFSrbAXOjYXVnWOGdzNrcC5T.jpeg', NULL, 'Fraser-Land-Escape-202-feet-RKuCL', 0.00, '2019-07-03 18:02:46', '2019-07-18 13:27:37');
 
 -- --------------------------------------------------------
 
@@ -1166,7 +1180,7 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `permissions`, `created_at`, `updated_at`) VALUES
-(1, 'Manager', '[\"1\",\"2\",\"4\"]', '2018-10-10 04:39:47', '2018-10-10 04:51:37'),
+(1, 'Manager', '[\"1\",\"2\",\"4\",\"5\"]', '2018-10-10 04:39:47', '2019-07-07 12:56:40'),
 (2, 'Accountant', '[\"2\",\"3\"]', '2018-10-10 04:52:09', '2018-10-10 04:52:09');
 
 -- --------------------------------------------------------
@@ -1188,8 +1202,15 @@ CREATE TABLE `searches` (
 --
 
 INSERT INTO `searches` (`id`, `query`, `count`, `created_at`, `updated_at`) VALUES
-(1, 'demo', 1, '2019-07-10 09:01:15', '2019-07-10 09:01:15'),
-(2, 'dem', 2, '2019-07-10 09:01:28', '2019-07-10 09:01:43');
+(1, 'tes', 3, '2019-07-01 15:15:22', '2019-07-05 17:11:35'),
+(2, 'dafw', 3, '2019-07-02 06:58:26', '2019-07-05 16:29:50'),
+(3, 'test', 4, '2019-07-02 07:13:05', '2019-07-06 08:53:30'),
+(4, 'demo', 4, '2019-07-02 07:13:09', '2019-07-06 11:39:26'),
+(5, 'brands', 144, '2019-07-03 21:31:32', '2019-07-05 09:10:59'),
+(6, 'northface', 1, '2019-07-05 12:59:48', '2019-07-05 12:59:48'),
+(7, 'Fraser Land-Escape 20.2 feet', 103, '2019-07-17 09:15:12', '2019-07-23 12:16:34'),
+(8, 'Fraser Land-Escape 20.2مكيف شباك جري 18000 وحدة بارد فقط feet', 4, '2019-07-17 10:33:04', '2019-07-17 10:38:21'),
+(9, 'مكيف شباك جري 18000 وحدة بارد فقط', 6, '2019-07-17 10:43:47', '2019-07-17 11:05:42');
 
 -- --------------------------------------------------------
 
@@ -1222,7 +1243,8 @@ CREATE TABLE `sellers` (
 --
 
 INSERT INTO `sellers` (`id`, `user_id`, `verification_status`, `verification_info`, `cash_on_delivery_status`, `sslcommerz_status`, `stripe_status`, `paypal_status`, `paypal_client_id`, `paypal_client_secret`, `ssl_store_id`, `ssl_password`, `stripe_key`, `stripe_secret`, `admin_to_pay`, `created_at`, `updated_at`) VALUES
-(1, 3, 1, '[{\"type\":\"text\",\"label\":\"Name\",\"value\":\"Mr. Seller\"},{\"type\":\"select\",\"label\":\"Marital Status\",\"value\":\"Married\"},{\"type\":\"multi_select\",\"label\":\"Company\",\"value\":\"[\\\"Company\\\"]\"},{\"type\":\"select\",\"label\":\"Gender\",\"value\":\"Male\"},{\"type\":\"file\",\"label\":\"Image\",\"value\":\"uploads\\/verification_form\\/CRWqFifcbKqibNzllBhEyUSkV6m1viknGXMEhtiW.png\"}]', 1, 1, 1, 0, NULL, NULL, 'activ5c3c5dac9254d', 'activ5c3c5dac9254d@ssl', 'pk_test_CqAfBW85ZifDyuEOhGaD4ZbE', 'sk_test_mRRMmV4GnBJ4UT7qeLlDe5F8', -16.60, '2018-10-07 04:42:57', '2019-07-10 08:34:13');
+(1, 3, 1, '[{\"type\":\"text\",\"label\":\"Name\",\"value\":\"Mr. Seller\"},{\"type\":\"select\",\"label\":\"Marital Status\",\"value\":\"Married\"},{\"type\":\"multi_select\",\"label\":\"Company\",\"value\":\"[\\\"Company\\\"]\"},{\"type\":\"select\",\"label\":\"Gender\",\"value\":\"Male\"},{\"type\":\"file\",\"label\":\"Image\",\"value\":\"uploads\\/verification_form\\/CRWqFifcbKqibNzllBhEyUSkV6m1viknGXMEhtiW.png\"}]', 1, 1, 1, 0, NULL, NULL, 'activ5c3c5dac9254d', 'activ5c3c5dac9254d@ssl', 'pk_test_CqAfBW85ZifDyuEOhGaD4ZbE', 'sk_test_mRRMmV4GnBJ4UT7qeLlDe5F8', -106.00, '2018-10-07 04:42:57', '2019-07-03 14:23:19'),
+(2, 7, 1, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0.00, '2019-07-21 11:14:00', '2019-07-21 11:14:00');
 
 -- --------------------------------------------------------
 
@@ -1246,7 +1268,7 @@ CREATE TABLE `seo_settings` (
 --
 
 INSERT INTO `seo_settings` (`id`, `keyword`, `author`, `revisit`, `sitemap_link`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'bootstrap,responsive,template,developer', 'Active IT Zone', 11, 'https://www.activeitzone.com', '<p>Active Super Shop Multi vendor system is such a platform to build a border less marketplace both for physical and digital goods.<br></p>', '2019-02-12 12:53:19', '2019-02-12 12:53:19');
+(1, '', 'mohamed', 11, 'http://lagrueg.com', '', '2019-07-04 18:06:24', '2019-07-04 16:06:24');
 
 -- --------------------------------------------------------
 
@@ -1275,7 +1297,8 @@ CREATE TABLE `shops` (
 --
 
 INSERT INTO `shops` (`id`, `user_id`, `name`, `logo`, `sliders`, `address`, `facebook`, `google`, `twitter`, `youtube`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 3, 'Demo Seller Shop', 'uploads/hop/logo/Gt1xw7vjTpMnwpADkGSilc35qrAfcw02kuZ36Jdn.png', '[\"uploads\\/shop\\/sliders\\/lToeKDeUyWcxy1HRs2yH37oBLyIwEwyPkqdyXBRO.jpeg\",\"uploads\\/shop\\/sliders\\/asDBJ3Bro1ijNaNnx3Hpnp6uq3n66ndyLczOJ0F6.jpeg\",\"uploads\\/shop\\/sliders\\/ltwUfHND4QP1K7bPFbuOC4i8v6zL9KHJKzex4zaX.jpeg\"]', 'House : Demo, Road : Demo, Section : Demo', 'www.facebook.com', 'www.google.com', 'www.twitter.com', 'www.youtube.com', 'Demo-Seller-Shop-1', '2018-11-27 10:23:13', '2019-02-09 23:56:31');
+(1, 3, 'Demo Seller Shop', 'uploads/hop/logo/Gt1xw7vjTpMnwpADkGSilc35qrAfcw02kuZ36Jdn.png', '[\"uploads\\/shop\\/sliders\\/lToeKDeUyWcxy1HRs2yH37oBLyIwEwyPkqdyXBRO.jpeg\",\"uploads\\/shop\\/sliders\\/asDBJ3Bro1ijNaNnx3Hpnp6uq3n66ndyLczOJ0F6.jpeg\",\"uploads\\/shop\\/sliders\\/ltwUfHND4QP1K7bPFbuOC4i8v6zL9KHJKzex4zaX.jpeg\"]', 'House : Demo, Road : Demo, Section : Demo', 'www.facebook.com', 'www.google.com', 'www.twitter.com', 'www.youtube.com', 'Demo-Seller-Shop-1', '2018-11-27 10:23:13', '2019-02-09 23:56:31'),
+(2, 7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'demo-shop-7', '2019-07-21 11:14:00', '2019-07-21 11:14:00');
 
 -- --------------------------------------------------------
 
@@ -1296,8 +1319,11 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `photo`, `published`, `created_at`, `updated_at`) VALUES
-(7, 'uploads/sliders/slider2.jpg', 1, '2019-03-12 05:58:05', '2019-03-12 05:58:05'),
-(8, 'uploads/sliders/slider3.png', 1, '2019-03-12 05:58:12', '2019-03-12 05:58:12');
+(12, 'uploads/sliders/Ss71bB9pFffNidt7WasARzWlecVPNsg16y9grCBQ.jpeg', 0, '2019-07-03 17:15:13', '2019-07-03 17:17:52'),
+(13, 'uploads/sliders/WSm5pwWuAnFyeSyENXFnMa1kz9VV69lVoDzXYIQL.jpeg', 1, '2019-07-03 17:15:13', '2019-07-03 17:15:13'),
+(16, 'uploads/sliders/CTm6WQbFBVPMYakNch4R7LlYS0bzsoQnde1YBDZd.jpeg', 1, '2019-07-03 17:15:31', '2019-07-03 17:15:31'),
+(17, 'uploads/sliders/5RBTWbrVFIrbhIKZE6G6KX3kce5BbeBJUDKshy5S.jpeg', 1, '2019-07-03 17:15:31', '2019-07-03 17:15:31'),
+(18, 'uploads/sliders/BeVlvfROmoSrHHail8YGZAm30OtZ8YHODoMUSwG2.jpeg', 1, '2019-07-03 17:18:11', '2019-07-03 17:18:11');
 
 -- --------------------------------------------------------
 
@@ -1345,15 +1371,23 @@ CREATE TABLE `sub_categories` (
 --
 
 INSERT INTO `sub_categories` (`id`, `name`, `category_id`, `created_at`, `updated_at`) VALUES
-(1, 'Demo sub category 1', 1, '2019-03-12 06:13:24', '2019-03-12 06:13:24'),
-(2, 'Demo sub category 2', 1, '2019-03-12 06:13:44', '2019-03-12 06:13:44'),
-(3, 'Demo sub category 3', 1, '2019-03-12 06:13:59', '2019-03-12 06:13:59'),
-(4, 'Demo sub category 1', 2, '2019-03-12 06:18:25', '2019-03-12 06:18:25'),
-(5, 'Demo sub category 2', 2, '2019-03-12 06:18:38', '2019-03-12 06:18:38'),
-(6, 'Demo sub category 3', 2, '2019-03-12 06:18:51', '2019-03-12 06:18:51'),
-(7, 'Demo sub category 1', 3, '2019-03-12 06:19:05', '2019-03-12 06:19:05'),
-(8, 'Demo sub category 2', 3, '2019-03-12 06:19:13', '2019-03-12 06:19:13'),
-(9, 'Demo sub category 3', 3, '2019-03-12 06:19:22', '2019-03-12 06:19:22');
+(10, 'WINDOW AC', 3, '2019-07-03 14:51:07', '2019-07-03 14:51:07'),
+(11, 'Wall Mount Split', 3, '2019-07-03 17:29:02', '2019-07-03 17:29:02'),
+(12, 'Desert cooler', 3, '2019-07-03 17:29:21', '2019-07-03 17:29:21'),
+(13, 'Cassette Split', 3, '2019-07-03 17:29:53', '2019-07-03 17:29:53'),
+(14, 'Refrigerators', 4, '2019-07-03 17:30:31', '2019-07-03 17:30:31'),
+(15, 'Freezers', 4, '2019-07-03 17:31:00', '2019-07-03 17:31:00'),
+(16, 'Washing Machines & Dryers', 4, '2019-07-03 17:31:24', '2019-07-03 17:31:24'),
+(17, 'Ovens', 3, '2019-07-03 17:33:53', '2019-07-03 17:33:53'),
+(18, 'Food preparation', 5, '2019-07-03 17:35:12', '2019-07-03 17:35:12'),
+(19, 'Microwaves', 5, '2019-07-03 17:35:29', '2019-07-03 17:35:29'),
+(20, 'Drink&Coffee', 5, '2019-07-03 17:35:46', '2019-07-03 17:35:46'),
+(21, 'Cooking', 5, '2019-07-03 17:36:13', '2019-07-03 17:36:13'),
+(22, 'Vacuum Cleaners', 5, '2019-07-03 17:37:34', '2019-07-03 17:37:34'),
+(23, 'Clothes Care', 5, '2019-07-03 17:37:51', '2019-07-03 17:37:51'),
+(24, 'HomeAppliances', 6, '2019-07-03 17:38:24', '2019-07-03 17:38:24'),
+(25, 'Small Appliances', 6, '2019-07-03 17:38:46', '2019-07-03 17:38:46'),
+(26, 'Cooling Fridge', 4, '2019-07-03 17:55:19', '2019-07-03 17:55:19');
 
 -- --------------------------------------------------------
 
@@ -1375,23 +1409,7 @@ CREATE TABLE `sub_sub_categories` (
 --
 
 INSERT INTO `sub_sub_categories` (`id`, `sub_category_id`, `name`, `brands`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Demo sub sub category', '[\"1\",\"2\"]', '2019-03-12 06:19:49', '2019-03-12 06:19:49'),
-(2, 1, 'Demo sub sub category 2', '[\"1\",\"2\"]', '2019-03-12 06:20:23', '2019-03-12 06:20:23'),
-(3, 1, 'Demo sub sub category 3', '[\"1\",\"2\"]', '2019-03-12 06:20:43', '2019-03-12 06:20:43'),
-(4, 2, 'Demo sub sub category 1', '[\"1\",\"2\"]', '2019-03-12 06:21:28', '2019-03-12 06:21:28'),
-(5, 2, 'Demo sub sub category 2', '[\"1\",\"2\"]', '2019-03-12 06:21:40', '2019-03-12 06:23:11'),
-(6, 2, 'Demo sub sub category 3', '[\"1\",\"2\"]', '2019-03-12 06:21:56', '2019-03-12 06:21:56'),
-(7, 3, 'Demo sub sub category 1', '[\"1\",\"2\"]', '2019-03-12 06:23:31', '2019-03-12 06:23:31'),
-(8, 3, 'Demo sub sub category 3', '[\"1\",\"2\"]', '2019-03-12 06:23:48', '2019-03-12 06:23:48'),
-(9, 3, 'Demo sub sub category 3', '[\"1\",\"2\"]', '2019-03-12 06:24:01', '2019-03-12 06:24:01'),
-(10, 4, 'Demo sub sub category 1', '[\"1\",\"2\"]', '2019-03-12 06:24:37', '2019-03-12 06:24:37'),
-(11, 4, 'Demo sub sub category 2', '[\"1\",\"2\"]', '2019-03-12 06:25:14', '2019-03-12 06:25:14'),
-(12, 4, 'Demo sub sub category', '[\"1\",\"2\"]', '2019-03-12 06:25:25', '2019-03-12 06:25:25'),
-(13, 5, 'Demo sub sub category 1', '[\"1\",\"2\"]', '2019-03-12 06:25:58', '2019-03-12 06:26:57'),
-(14, 6, 'Demo sub sub category 1', '[\"1\",\"2\"]', '2019-03-12 06:26:16', '2019-03-12 06:26:45'),
-(15, 7, 'Demo sub sub category', '[\"1\",\"2\"]', '2019-03-12 06:27:17', '2019-03-12 06:27:17'),
-(16, 8, 'Demo sub sub category', '[\"1\",\"2\"]', '2019-03-12 06:27:29', '2019-03-12 06:27:29'),
-(17, 9, 'Demo sub sub category', '[\"1\",\"2\"]', '2019-03-12 06:27:41', '2019-03-12 06:27:41');
+(18, 10, 'GREE WINDOW', '[\"3\",\"4\"]', '2019-07-03 14:53:03', '2019-07-03 17:45:36');
 
 -- --------------------------------------------------------
 
@@ -1456,10 +1474,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `provider_id`, `user_type`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `avatar`, `avatar_original`, `address`, `country`, `city`, `postal_code`, `phone`, `balance`, `created_at`, `updated_at`) VALUES
-(3, NULL, 'seller', 'Mr. Seller', 'seller@example.com', '2018-12-11 18:00:00', '$2y$10$eUKRlkmm2TAug75cfGQ4i.WoUbcJ2uVPqUlVkox.cv4CCyGEIMQEm', 'bNbprTWXvmAecEhWUfFwY6mSZp1WpKtlYUkSf1kXUe1OVVg8vsrDC43Rypj1', 'https://lh3.googleusercontent.com/-7OnRtLyua5Q/AAAAAAAAAAI/AAAAAAAADRk/VqWKMl4f8CI/photo.jpg?sz=50', 'uploads/ucQhvfz4EQXNeTbN8Eif0Cpq5LnOwvg8t7qKNKVs.jpeg', 'Demo address', 'US', 'Demo city', '1234', NULL, 0.00, '2018-10-07 04:42:57', '2019-05-19 02:14:08'),
-(4, NULL, 'admin', 'admin', 'admin@mail.com', '2018-12-11 18:00:00', '$2y$10$AL5D/hhMiLweQOj4CPgalOi8LzpnWVQpHP0TmUK41TGgN5JWa.iHG', 'ithHzE3gVEmz4RPDkSUB3QzJpZjvQ1AR75BN4ToXwZNPPWWEgnMgoTVMuek8', 'https://lh3.googleusercontent.com/-7OnRtLyua5Q/AAAAAAAAAAI/AAAAAAAADRk/VqWKMl4f8CI/photo.jpg?sz=50', 'uploads/ucQhvfz4EQXNeTbN8Eif0Cpq5LnOwvg8t7qKNKVs.jpeg', 'Demo address', 'US', 'Demo city', '1234', NULL, 0.00, '2018-10-07 04:42:57', '2019-05-19 02:14:08'),
-(5, NULL, 'customer', 'kareem', 'kareem@krito.io', '2019-07-06 12:07:16', '$2y$10$QtqEScI4TfSGH7NAx/9ZyeKXxQ07D8t2tv5RpgcY7NX5J914hZooK', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0.00, '2019-07-06 12:36:16', '2019-07-06 12:36:16'),
-(6, NULL, 'customer', 'amal', 'amal@yahoo.com', '2019-07-10 10:07:18', '$2y$10$FmgBb0hTdVCg/YBR2b92pe0hn1XAsbadBYE8daA7ZRtFzm2BDOGFK', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0.00, '2019-07-10 10:57:18', '2019-07-10 10:57:18');
+(3, NULL, 'seller', 'Mr. Seller', 'seller@example.com', '2018-12-11 18:00:00', '$2y$10$eUKRlkmm2TAug75cfGQ4i.WoUbcJ2uVPqUlVkox.cv4CCyGEIMQEm', 'bNto8vlQDho98BNBgT5Targed6HeZYeMQtCwqhCRh4ybHLiP83VZMPa7AOw2', 'https://lh3.googleusercontent.com/-7OnRtLyua5Q/AAAAAAAAAAI/AAAAAAAADRk/VqWKMl4f8CI/photo.jpg?sz=50', 'uploads/ucQhvfz4EQXNeTbN8Eif0Cpq5LnOwvg8t7qKNKVs.jpeg', 'Demo address', 'US', 'Demo city', '1234', NULL, 0.00, '2018-10-07 04:42:57', '2019-05-19 02:14:08'),
+(4, NULL, 'admin', 'admin', 'admin@mail.com', '2018-12-11 18:00:00', '$2y$10$AL5D/hhMiLweQOj4CPgalOi8LzpnWVQpHP0TmUK41TGgN5JWa.iHG', '6vLxTm8DTVHTy0HnQhhk83x1GkDrwjvNFHWBIuEr1VwKfSqC1w1j6oAJ52gg', 'https://lh3.googleusercontent.com/-7OnRtLyua5Q/AAAAAAAAAAI/AAAAAAAADRk/VqWKMl4f8CI/photo.jpg?sz=50', 'uploads/ucQhvfz4EQXNeTbN8Eif0Cpq5LnOwvg8t7qKNKVs.jpeg', 'Demo address', 'US', 'Demo city', '1234', NULL, 0.00, '2018-10-07 04:42:57', '2019-05-19 02:14:08'),
+(5, NULL, 'customer', 'kareem io', 'kareem@krito.io', '2019-07-02 13:07:45', '$2y$10$jSkDPWXrV6a1FOMOBB98GewfoBqZgbdjUXcPFjteGC1kaPSn7Yg5q', NULL, NULL, NULL, 'egypt\r\n11 zakria osman', 'EG', 'cairo', '002', '0123456789', -6388.03, '2019-07-02 13:29:45', '2019-07-18 12:55:16'),
+(6, NULL, 'visitor', 'visitor', 'visitor@mail.com', '2018-12-11 18:00:00', '$2y$10$AL5D/hhMiLweQOj4CPgalOi8LzpnWVQpHP0TmUK41TGgN5JWa.iHG', 'LCf0svduC61z0DjNJY8HNWHXL8TwqOlqd4c0j4kV4jS1IKcDHsvM0zs7BMWp', 'https://lh3.googleusercontent.com/-7OnRtLyua5Q/AAAAAAAAAAI/AAAAAAAADRk/VqWKMl4f8CI/photo.jpg?sz=50', 'uploads/ucQhvfz4EQXNeTbN8Eif0Cpq5LnOwvg8t7qKNKVs.jpeg', 'Demo address', 'US', 'Demo city', '1234', NULL, 0.00, '2018-10-07 04:42:57', '2019-05-19 02:14:08'),
+(7, NULL, 'seller', 'seller2', 'seller2@mail.com', NULL, '$2y$10$oc18fGtdiXRKjfI13YHJCetablO6ztuR5keIXuW0sgwh6fqjGjCCm', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0.00, '2019-07-21 11:14:00', '2019-07-21 11:14:00');
 
 -- --------------------------------------------------------
 
@@ -1490,6 +1509,14 @@ CREATE TABLE `wishlists` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `wishlists`
+--
+
+INSERT INTO `wishlists` (`id`, `user_id`, `product_id`, `created_at`, `updated_at`) VALUES
+(1, 5, 4, '2019-07-03 11:23:39', '2019-07-03 11:23:39'),
+(2, 5, 3, '2019-07-03 11:26:17', '2019-07-03 11:26:17');
 
 --
 -- Indexes for dumped tables
@@ -1747,13 +1774,13 @@ ALTER TABLE `wishlists`
 -- AUTO_INCREMENT for table `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `business_settings`
@@ -1765,7 +1792,7 @@ ALTER TABLE `business_settings`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `colors`
@@ -1783,13 +1810,13 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `coupons`
 --
 ALTER TABLE `coupons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `coupon_usages`
 --
 ALTER TABLE `coupon_usages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `currencies`
@@ -1801,19 +1828,19 @@ ALTER TABLE `currencies`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `flash_deals`
 --
 ALTER TABLE `flash_deals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `flash_deal_products`
 --
 ALTER TABLE `flash_deal_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `general_settings`
@@ -1825,7 +1852,7 @@ ALTER TABLE `general_settings`
 -- AUTO_INCREMENT for table `home_categories`
 --
 ALTER TABLE `home_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `languages`
@@ -1849,13 +1876,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `payments`
@@ -1873,7 +1900,7 @@ ALTER TABLE `policies`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `product_stocks`
@@ -1897,13 +1924,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `searches`
 --
 ALTER TABLE `searches`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `sellers`
 --
 ALTER TABLE `sellers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `seo_settings`
@@ -1915,13 +1942,13 @@ ALTER TABLE `seo_settings`
 -- AUTO_INCREMENT for table `shops`
 --
 ALTER TABLE `shops`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `staff`
@@ -1939,13 +1966,13 @@ ALTER TABLE `subscribers`
 -- AUTO_INCREMENT for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `sub_sub_categories`
 --
 ALTER TABLE `sub_sub_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tickets`
@@ -1963,7 +1990,7 @@ ALTER TABLE `ticket_replies`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `wallets`
@@ -1975,7 +2002,7 @@ ALTER TABLE `wallets`
 -- AUTO_INCREMENT for table `wishlists`
 --
 ALTER TABLE `wishlists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
