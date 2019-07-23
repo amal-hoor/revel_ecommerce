@@ -14,69 +14,38 @@
             </div>
         </div>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
-                    </div>
 
-                    <!-- End .col-lg-8 -->
 
-                    <!--<div class="col-lg-4 top-banners">
-                        <div class="banner banner-image">
-                            <a href="#">
-                                <img src="assets/images/banners/banner-1.jpg" alt="banner">
-                            </a>
-                        </div>&lt;!&ndash; End .banner &ndash;&gt;
+<div class="container">
+                            {{--<div class="row">--}}
+                                {{--@foreach (\App\Banner::where('published', 1)->get() as $key => $banner)--}}
+                                    {{--<div class="col-lg-4">--}}
+                                       {{--<img class="owl-lazy img-responsive" src="{{ asset($banner->photo) }}"  data-src="{{ asset($banner->photo) }}" alt="banner image">--}}
+                                    {{--</div>--}}
+                                {{--@endforeach--}}
+    <div class="row">
+    @foreach(\App\Banner::where('published' , 1)->where('position' , 1)->take(3)->get() as $banner)
+        <div class="col-4">
+            <div class="banner banner-image">
+                <a href="#">
+                    <img src="{{ asset($banner->photo) }}" alt="banner">
+                </a>
+            </div><!-- End .banner -->
+        </div><!-- End .col-md-4 -->
+    @endforeach
+    </div>
 
-                        <div class="banner banner-image">
-                            <a href="#">
-                                <img src="assets/images/banners/banner-2.jpg" alt="banner">
-                            </a>
-                        </div>&lt;!&ndash; End .banner &ndash;&gt;
+                            </div>
+</div>
 
-                        <div class="banner banner-image">
-                            <a href="#">
-                                <img src="assets/images/banners/banner-3.jpg" alt="banner">
-                            </a>
-                        </div>&lt;!&ndash; End .banner &ndash;&gt;
-                    </div>-->
-                    <!-- End .col-lg-4 -->
+
+
+
+
                 </div><!-- End .row -->
             </div><!-- End .container -->
         </div><!-- End .home-top-container -->
 
-        <!--
-                    <div class="info-boxes-container">
-                        <div class="container">
-                            <div class="info-box">
-                                <i class="icon-shipping"></i>
-
-                                <div class="info-box-content">
-                                    <h4>FREE SHIPPING & RETURN</h4>
-                                    <p>Free shipping on all orders over $99.</p>
-                                </div>&lt;!&ndash; End .info-box-content &ndash;&gt;
-                            </div>&lt;!&ndash; End .info-box &ndash;&gt;
-
-                            <div class="info-box">
-                                <i class="icon-us-dollar"></i>
-
-                                <div class="info-box-content">
-                                    <h4>MONEY BACK GUARANTEE</h4>
-                                    <p>100% money back guarantee</p>
-                                </div>&lt;!&ndash; End .info-box-content &ndash;&gt;
-                            </div>&lt;!&ndash; End .info-box &ndash;&gt;
-
-                            <div class="info-box">
-                                <i class="icon-support"></i>
-
-                                <div class="info-box-content">
-                                    <h4>ONLINE SUPPORT 24/7</h4>
-                                    <p>Lorem ipsum dolor sit amet.</p>
-                                </div>&lt;!&ndash; End .info-box-content &ndash;&gt;
-                            </div>&lt;!&ndash; End .info-box &ndash;&gt;
-                        </div>&lt;!&ndash; End .container &ndash;&gt;
-                    </div>&lt;!&ndash; End .info-boxes-container &ndash;&gt;
-        -->
 
         <div class="container">
 
@@ -165,7 +134,7 @@
                                                     <a href="product.html">{{$product->name}}</a>
                                                 </h2>
                                                 <div class="price-box">
-                                                    <span class="product-price">$28.00</span>
+                                                    <span class="product-price">{{$product->unit_price}}</span>
                                                 </div><!-- End .price-box -->
 
                                                 <div class="product-action">
@@ -198,9 +167,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="banner banner-image">
-                                    <a href="#">
-                                        <img src="{{asset('assets/images/banners/banner-7.jpg')}}" alt="banner">
-                                    </a>
+                                    @php($banner=\App\Banner::where('position' , 2)->first())
+                                    <img src="{{ asset($banner->photo) }}" alt="banner" height="100">
+
                                 </div><!-- End .banner -->
 
                             </div><!-- End .col-md-4 -->

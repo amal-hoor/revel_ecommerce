@@ -15,21 +15,24 @@
     @if(Session::has('compare'))
     <div class="dropdown-menu compare_items_sidenav" >
         <div class="dropdownmenu-wrapper">
+
             <ul class="compare-products">
-                    @foreach (Session::get('compare') as $key => $item)
+                @foreach (Session::get('compare') as $key => $item)
                     @php
-                    $product=App\Product::find($item)
+                        $product=App\Product::find($item)
                     @endphp
-                <li class="product">
-                    <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
-                    <h4 class="product-title"><a href="{{route('product',$product->slug)}}">{{$product->name}}</a></h4>
-                    <img src="{{$product->photos}}">
-                </li>
-                   @endforeach
+                    <li class="product">
+                        <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
+                        <h4 class="product-title"><a href="{{route('product',$product->slug)}}">{{$product->name}}</a></h4>
+                        <img src="{{asset($product->photos)}}">
+                    </li>
+                @endforeach
             </ul>
+
 
             <div class="compare-actions">
                 <a href="{{route('compare.reset')}}" class="action-link">Clear All</a>
+                <a href="{{route('compare')}}" class="btn btn-danger">View Compare</a>
 
             </div>
         </div><!-- End .dropdownmenu-wrapper -->

@@ -1,29 +1,12 @@
 @extends('frontend.layouts.master')
 
-<style>
-.box-content{
-
-    padding:20px;
-}
-.single-category{
-    background:none;
-}
-.btn{
-    background:none;
-}
-.product-card-1{
-    border:solid  1px;
-    border-radius:5px;
-    padding:10px;
-}
-</style>
 
 @section('content')
-
+    <div class="container">
     <div class="breadcrumb-area">
-        <div class="container">
+
             <div class="row">
-                <div class="col">
+                <div class="col-3">
                     <ul class="list">
                         <li><a href="{{ route('home') }}">{{__('Home')}}</a></li>
                         <li><a href="{{ route('products') }}">{{__('All Categories')}}</a></li>
@@ -42,42 +25,54 @@
                     </ul>
                 </div>
             </div>
-        </div>
     </div>
 
 
     <section class="gry-bg py-4">
-        <div class="container">
+
             <div class="row">
                 <div class="col-xl-3 d-none d-xl-block">
 
                     <div class="bg-white sidebar-box mb-3">
                         <div class="box-title text-center">
+                            <h2>
                             {{__('Categories')}}
+                            </h2>
                         </div>
-                        <div class="box-content">
+                        <div class="">
                             <div class="category-accordion">
                                 @foreach (\App\Category::all() as $key => $category)
-                                    <div class="single-category">
-                                        <button class="btn w-100" type="button" data-toggle="collapse" data-target="#category-{{ $key }}" aria-expanded="true">
-                                            {{ __($category->name) }}<i class="fas fa-arrow-to-right"></i>
-                                        </button>
+                                    <div class="single-category breadcrumb-area">
+                                        <ul class="list">
+                                           <li>
+                                               {{--<button class="btn w-100" type="button" data-toggle="collapse" data-target="#category-{{ $key }}" aria-expanded="true">--}}
+                                                <a href="" data-toggle="collapse" data-target="#category-{{ $key }}">{{ __($category->name) }}<i class="fas fa-arrow-to-right"></i></a>
+                                               {{--</button>--}}
+                                           </li>
+                                        </ul>
 
                                         <div id="category-{{ $key }}" class="collapse">
+                                            @if($category->subcategories)
                                             @foreach ($category->subcategories as $key2 => $subcategory)
                                                 <div class="single-sub-category">
-                                                    <button class="btn w-100 sub-category-name" type="button" data-toggle="collapse" data-target="#subCategory-{{ $key }}-{{ $key2 }}" aria-expanded="true">
-                                                        {{ __($subcategory->name) }}
-                                                    </button>
+                                                    {{--<button class="btn w-100 sub-category-name" type="button" data-toggle="collapse" data-target="#subCategory-{{ $key }}-{{ $key2 }}" aria-expanded="true">--}}
+                                                    <ul class="list ml-4">
+                                                       <li><a href="" data-toggle="collapse" data-target="#subCategory-{{ $key }}-{{ $key2 }}">{{ __($subcategory->name) }}</a></li>
+                                                    </ul>
+                                                    {{--</button>--}}
+                                                    @if($subcategory->subsubcategories)
                                                     <div id="subCategory-{{ $key }}-{{ $key2 }}" class="collapse">
-                                                        <ul class="sub-sub-category-list">
+                                                        <ul class="list ml-5">
                                                             @foreach ($subcategory->subsubcategories as $key3 => $subsubcategory)
                                                                 <li><a href="{{ route('products.subsubcategory', $subsubcategory->id) }}">{{ __($subsubcategory->name) }}</a></li>
                                                             @endforeach
                                                         </ul>
                                                     </div>
+                                                    @endif
+
                                                 </div>
                                             @endforeach
+                                            @endif
                                         </div>
                                     </div>
                                 @endforeach
@@ -85,9 +80,6 @@
                         </div>
                     </div>
                     <div class="bg-white sidebar-box mb-3">
-                        <div class="box-title text-center">
-                            {{__('Price range')}}
-                        </div>
                         <div class="box-content">
                             <div class="range-slider-wrapper mt-3">
                                 <!-- Range slider container -->
@@ -230,8 +222,9 @@
                             <div class="row sm-no-gutters gutters-5">
                                 @foreach ($products as $key => $product)
                                     <div class="col-xxl-3 col-xl-4 col-lg-3 col-md-4 col-6">
-                                        <div class="product-card-1 mb-2">
-                                            <figure class="product-image-container">
+                                        <div class="card mb-2">
+
+                                            <figure class="card-img-top">
                                                 {{-- <a href="{{ route('product', $product->slug) }}" class="product-image d-block" style="background-image:url('{{ asset($product->thumbnail_img) }}');">
                                                 </a> --}}
                                             <a href="{{ route('product', $product->slug) }}"><img src="{{asset($product->thumbnail_img)}}"></a>
@@ -251,18 +244,33 @@
                                                     <span class="product-price strong-300"><strong>{{ home_discounted_base_price($product->id) }}</strong></span>
                                                 </div><!-- End .price-box -->
 
-                                        <div class="product-card-1-action">
-                                                    <button class="paction add-wishlist" title="Add to Wishlist" onclick="addToWishList({{ $product->id }})">
-                                                        <i class="la la-heart-o"></i>
-                                                    </button>
+                                        <div class="card-footer">
+                                                    {{--<button class="paction add-wishlist" title="Add to Wishlist" onclick="addToWishList({{ $product->id }})">--}}
+                                                        {{--<i class="la la-heart-o"></i>--}}
+                                                    {{--</button>--}}
 
-                                                    <button type="button" class="paction add-cart btn btn-base-1 btn-circle btn-icon-left" onclick="showAddToCartModal({{ $product->id }})">
-                                                        <i class="fa la la-shopping-cart mr-0 mr-sm-2"></i><span class="d-none d-sm-inline-block">{{__('Add to cart')}}</span>
-                                                    </button>
+                                                    {{--<button type="button" class="paction add-cart btn btn-base-1 btn-circle btn-icon-left" onclick="showAddToCartModal({{ $product->id }})">--}}
+                                                        {{--<i class="fa la la-shopping-cart mr-0 mr-sm-2"></i><span class="d-none d-sm-inline-block">{{__('Add to cart')}}</span>--}}
+                                                    {{--</button>--}}
 
-                                                    <button class="paction add-compare" title="Add to Compare" onclick="addToCompare({{ $product->id }})">
-                                                        <i class="la la-refresh"></i>
-                                                    </button>
+                                                    {{--<button class="paction add-compare" title="Add to Compare" onclick="addToCompare({{ $product->id }})">--}}
+                                                        {{--<i class="la la-refresh"></i>--}}
+                                                    {{--</button>--}}
+
+                                            <div class="product-action">
+                                                <a href="#" class="paction add-wishlist" title="Add to Wishlist" onclick="addToWishList({{ $product->id }})">
+                                                    <span>Add to Wishlist</span>
+                                                </a>
+
+                                                <a href="#" class="paction add-cart" title="Add to Cart" onclick="showAddToCartModal({{ $product->id }})">
+                                                    <span>Add to Cart</span>
+                                                </a>
+
+                                                <a href="#" class="paction add-compare" id="compare" title="Add to Compare" onclick="addToCompare({{ $product->id }})">
+                                                    <span>Add to Compare</span>
+                                                </a>
+
+                                            </div><!-- End .product-action -->
                                                 </div><!-- End .product-action -->
                                             </div><!-- End .product-details -->
                                         </div>

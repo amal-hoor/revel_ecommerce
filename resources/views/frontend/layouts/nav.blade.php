@@ -2,15 +2,6 @@
     <div class="header-top">
         <div class="container">
             <div class="header-left header-dropdowns">
-                <div class="header-dropdown">
-                    <a href="#">USD</a>
-                    <div class="header-menu">
-                        <ul>
-                            <li><a href="#">EUR</a></li>
-                            <li><a href="#">USD</a></li>
-                        </ul>
-                    </div><!-- End .header-menu -->
-                </div><!-- End .header-dropown -->
 
                 <div class="header-dropdown">
                         <li class="dropdown" id="lang-change">
@@ -59,13 +50,16 @@
                                 <li class="product">
                                     <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
                                     <h4 class="product-title"><a href="{{route('product',$product->slug)}}">{{$product->name}}</a></h4>
-                                    <img src="{{$product->photos}}">
+
+                                    <img src="{{asset($product->photos)}}">
                                 </li>
                                    @endforeach
                             </ul>
 
                             <div class="compare-actions">
                                 <a href="{{route('compare.reset')}}" class="action-link">Clear All</a>
+
+                                <a href="{{route('compare')}}" class="btn btn-danger">View Compare</a>
 
                             </div>
                         </div><!-- End .dropdownmenu-wrapper -->
@@ -84,19 +78,25 @@
                         <ul>
                             @auth
                             <li>
-                                <a href="{{ route('dashboard') }}" class="top-bar-item">{{__('My Profile')}}</a>
-                            </li>
-                            <li>
                                 <a href="{{ route('logout') }}" class="top-bar-item">{{__('Logout')}}</a>
                             </li>
                             @else
-                            <li>
-                                <a href="{{ route('user.login') }}" class="top-bar-item">{{__('Login')}}</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('user.registration') }}" class="top-bar-item">{{__('Registration')}}</a>
-                            </li>
+                                <li>
+                                    <a href="{{ route('user.login') }}" class="top-bar-item">{{__('Login')}}</a>
+                                </li>
                             @endauth
+
+                                <li>
+                                    <a href="{{ route('dashboard') }}" class="top-bar-item">{{__('My Profile')}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('wishlists.index') }}" class="top-bar-item">{{__('MY WISHLIST')}}</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('user.registration') }}" class="top-bar-item">{{__('Registration')}}</a>
+                                </li>
+
                         </ul>
                     </div><!-- End .header-menu -->
                 </div><!-- End .header-dropown -->
@@ -111,8 +111,8 @@
     <div class="header-middle">
         <div class="container">
             <div class="header-left">
-                <a href="index-2.html" class="logo">
-                    <img src="{{asset('assets/images/logo.png')}}" alt="Porto Logo">
+                <a href="{{route('home')}}" class="logo">
+                    <img src="{{asset('assets/images/logo-aaa.png')}}" alt="Porto Logo">
                 </a>
             </div><!-- End .header-left -->
 
@@ -267,6 +267,9 @@
 
             <nav class="main-nav">
                 <ul class="menu sf-arrows">
+                    <li class="logo">
+                        <img src="{{asset('assets/images/logo-aaa.png')}}" alt="Porto Logo">
+                    </li>
                     <li class="active"><a href="{{ route('home') }}">HOME</a></li>
 
                     @foreach (\App\Category::all()->take(11) as $key => $category)

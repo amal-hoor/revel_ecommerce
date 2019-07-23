@@ -15,7 +15,7 @@
         </nav>
         <div class="container">
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <div class="product-single-container product-single-default">
                         <div class="row">
                             <div class="col-lg-7 col-md-6 product-single-gallery">
@@ -23,7 +23,7 @@
                                     <div class="product-single-carousel owl-carousel owl-theme">
 
                                                 <div class="product-item">
-                                                    <img class="product-single-image" src="{{ asset($product->photos) }}" data-zoom-image="{{asset('assets/images/products/zoom/product-1-big.jpg')}}"/>
+                                                    <img class="product-single-image" src="{{ asset($product->photos) }}" data-zoom-image="{{asset($product->photos)}}"/>
                                                 </div>
                                                 {{-- @foreach (json_decode($product->photos) as $key => $photo)
                                                 <a href="{{ asset($photo) }}">
@@ -37,20 +37,7 @@
                                         <i class="icon-plus"></i>
                                     </span>
                                 </div>
-                                <div class="prod-thumbnail row owl-dots" id='carousel-custom-dots'>
-                                    <div class="col-3 owl-dot">
-                                        <img src="{{asset('assets/images/products/zoom/product-1.jpg')}}"/>
-                                    </div>
-                                    <div class="col-3 owl-dot">
-                                        <img src="{{asset('assets/images/products/zoom/product-2.jpg')}}"/>
-                                    </div>
-                                    <div class="col-3 owl-dot">
-                                        <img src="{{asset('assets/images/products/zoom/product-3.jpg')}}"/>
-                                    </div>
-                                    <div class="col-3 owl-dot">
-                                        <img src="{{asset('assets/images/products/zoom/product-4.jpg')}}"/>
-                                    </div>
-                                </div>
+
                             </div><!-- End .col-lg-7 -->
 
                             <div class="col-lg-5 col-md-6">
@@ -72,12 +59,12 @@
                                     </div><!-- End .product-container -->
 
                                     <div class="price-box">
-                                        <span class="old-price">$81.00</span>
-                                        <span class="product-price">$101.00</span>
+                                        <span class="old-price">{{$product->unit_price}}</span>
+                                        <span class="product-price">{{$product->purchase_price}}</span>
                                     </div><!-- End .price-box -->
 
                                     <div class="product-desc">
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non.</p>
+                                        <p>{{$product->description}}</p>
                                     </div><!-- End .product-desc -->
 
 
@@ -181,9 +168,6 @@
                                 <a class="nav-link active" id="product-tab-desc" data-toggle="tab" href="#product-desc-content" role="tab" aria-controls="product-desc-content" aria-selected="true">Description</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="product-tab-tags" data-toggle="tab" href="#product-tags-content" role="tab" aria-controls="product-tags-content" aria-selected="false">Tags</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" id="product-tab-reviews" data-toggle="tab" href="#product-reviews-content" role="tab" aria-controls="product-reviews-content" aria-selected="false">Reviews</a>
                             </li>
                         </ul>
@@ -191,35 +175,13 @@
                             <div class="tab-pane fade show active" id="product-desc-content" role="tabpanel" aria-labelledby="product-tab-desc">
                                 <div class="product-desc-content">
                                     <p>{{$product->description}}</p>
-                                    <ul>
-                                        <li><i class="icon-ok"></i>Any Product types that You want - Simple, Configurable</li>
-                                        <li><i class="icon-ok"></i>Downloadable/Digital Products, Virtual Products</li>
-                                        <li><i class="icon-ok"></i>Inventory Management with Backordered items</li>
-                                    </ul>
-                                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <br>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
                                 </div><!-- End .product-desc-content -->
                             </div><!-- End .tab-pane -->
 
-                            <div class="tab-pane fade" id="product-tags-content" role="tabpanel" aria-labelledby="product-tab-tags">
-                                <div class="product-tags-content">
-                                    <form action="#">
-                                        <h4>Add Your Tags:</h4>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-sm" required>
-                                            <input type="submit" class="btn btn-primary" value="Add Tags">
-                                        </div><!-- End .form-group -->
-                                    </form>
-                                    <p class="note">Use spaces to separate tags. Use single quotes (') for phrases.</p>
-                                </div><!-- End .product-tags-content -->
-                            </div><!-- End .tab-pane -->
+
 
                             <div class="tab-pane fade" id="product-reviews-content" role="tabpanel" aria-labelledby="product-tab-reviews">
                                 <div class="product-reviews-content">
-                                    <div class="collateral-box">
-                                        <ul>
-                                            <li>Be the first to review this product</li>
-                                        </ul>
-                                    </div><!-- End .collateral-box -->
 
                                     <div class="add-product-review">
                                         <h3 class="text-uppercase heading-text-color font-weight-semibold">WRITE YOUR OWN REVIEW</h3>
@@ -317,87 +279,50 @@
                     </div><!-- End .product-single-tabs -->
                 </div><!-- End .col-lg-9 -->
 
-                <div class="sidebar-overlay"></div>
-                <div class="sidebar-toggle"><i class="icon-sliders"></i></div>
-                <aside class="sidebar-product col-lg-3 padding-left-lg mobile-sidebar">
-                    <div class="sidebar-wrapper">
-                        <div class="widget widget-brand">
-                            <a href="#">
-                                <img src="{{asset($product->brand->logo)}}" alt="brand name">
-                            </a>
-                        </div><!-- End .widget -->
 
-                        <div class="widget widget-info">
-                            <ul>
-                                <li>
-                                    <i class="icon-shipping"></i>
-                                    <h4>FREE<br>SHIPPING</h4>
-                                </li>
-                                <li>
-                                    <i class="icon-us-dollar"></i>
-                                    <h4>100% MONEY<br>BACK GUARANTEE</h4>
-                                </li>
-                                <li>
-                                    <i class="icon-online-support"></i>
-                                    <h4>ONLINE<br>SUPPORT 24/7</h4>
-                                </li>
-                            </ul>
-                        </div><!-- End .widget -->
+                        {{--<div class="widget widget-featured">--}}
+                            {{--<h3 class="widget-title">Featured Products</h3>--}}
 
-                        <div class="widget widget-banner">
-                            <div class="banner banner-image">
-                                <a href="#">
-                                    <img src="{{asset('assets/images/banners/banner-sidebar.jpg')}}" alt="Banner Desc">
-                                </a>
-                            </div><!-- End .banner -->
-                        </div><!-- End .widget -->
+                            {{--<div class="widget-body">--}}
+                                {{--<div class="owl-carousel widget-featured-products">--}}
 
-                        <div class="widget widget-featured">
-                            <h3 class="widget-title">Featured Products</h3>
+                                        {{--@foreach (filter_products(\App\Product::where('published', 1)->where('featured', '1'))->limit(12)->get() as $key => $product)--}}
 
-                            <div class="widget-body">
-                                <div class="owl-carousel widget-featured-products">
+                                    {{--<div class="featured-col">--}}
+                                        {{--<div class="product product-sm">--}}
+                                            {{--<figure class="product-image-container">--}}
+                                                {{--<a href="product.html" class="product-image">--}}
+                                                    {{--<img src="{{asset($product->photos)}}" alt="product">--}}
+                                                {{--</a>--}}
+                                            {{--</figure>--}}
+                                            {{--<div class="product-details">--}}
+                                                {{--<h2 class="product-title">--}}
+                                                    {{--<a href="product.html">{{$product->name}}</a>--}}
+                                                {{--</h2>--}}
+                                                {{--<div class="ratings-container">--}}
+                                                    {{--<div class="product-ratings">--}}
 
-                                        @foreach (filter_products(\App\Product::where('published', 1)->where('featured', '1'))->limit(12)->get() as $key => $product)
+                                                                {{--@php--}}
+                                                                {{--$total = 0;--}}
+                                                                {{--$total += $product->reviews->count();--}}
+                                                            {{--@endphp--}}
+                                                        {{--<span class="star-rating">--}}
+                                                            {{--{{ renderStarRating($product->rating) }}--}}
+                                                        {{--</span>--}}
 
-                                    <div class="featured-col">
-                                        <div class="product product-sm">
-                                            <figure class="product-image-container">
-                                                <a href="product.html" class="product-image">
-                                                    <img src="{{asset($product->photos)}}" alt="product">
-                                                </a>
-                                            </figure>
-                                            <div class="product-details">
-                                                <h2 class="product-title">
-                                                    <a href="product.html">{{$product->name}}</a>
-                                                </h2>
-                                                <div class="ratings-container">
-                                                    <div class="product-ratings">
+                                                    {{--</div><!-- End .product-ratings -->--}}
+                                                {{--</div><!-- End .product-container -->--}}
+                                                {{--<div class="price-box">--}}
+                                                    {{--<span class="product-price">{{$product->unit_price}}</span>--}}
+                                                {{--</div><!-- End .price-box -->--}}
+                                            {{--</div><!-- End .product-details -->--}}
+                                        {{--</div><!-- End .product -->--}}
 
-                                                                @php
-                                                                $total = 0;
-                                                                $total += $product->reviews->count();
-                                                            @endphp
-                                                        <span class="star-rating">
-                                                            {{ renderStarRating($product->rating) }}
-                                                        </span>
-
-                                                    </div><!-- End .product-ratings -->
-                                                </div><!-- End .product-container -->
-                                                <div class="price-box">
-                                                    <span class="product-price">{{$product->unit_price}}</span>
-                                                </div><!-- End .price-box -->
-                                            </div><!-- End .product-details -->
-                                        </div><!-- End .product -->
-
-                                    </div><!-- End .featured-col -->
-                                    @endforeach
-                                </div><!-- End .widget-featured-slider -->
-                            </div><!-- End .widget-body -->
-                        </div><!-- End .widget -->
-                    </div>
-                </aside><!-- End .col-md-3 -->
-            </div><!-- End .row -->
+                                    {{--</div><!-- End .featured-col -->--}}
+                                    {{--@endforeach--}}
+                                {{--</div><!-- End .widget-featured-slider -->--}}
+                            {{--</div><!-- End .widget-body -->--}}
+                        {{--</div><!-- End .widget -->--}}
         </div><!-- End .container -->
 
         <div class="featured-section">
@@ -441,7 +366,7 @@
                                     <span>Add to Cart</span>
                                 </a>
 
-                                <a href="#" class="paction add-compare" title="Add to Compare">
+                                <a href="#" class="paction add-compare" title="Add to Compare"  onclick="addToCompare({{$product->id}})">
                                     <span>Add to Compare</span>
                                 </a>
                             </div><!-- End .product-action -->
